@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm41tggvbpinh"]
 
-[ext_resource type="Texture2D" uid="uid://dtrc2lemhltn1" path="res://icon.svg" id="1_kswjr"]
-[ext_resource type="Script" path="res://scripts/spark.gd" id="2_jfskv"]
+[ext_resource type="Script" path="res://scenes/character/spark/spark.gd" id="1_ee507"]
+[ext_resource type="Texture2D" uid="uid://dtrc2lemhltn1" path="res://icon.svg" id="2_qvspv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wixdc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kswjr")
+"texture": ExtResource("2_qvspv")
 }],
 "loop": true,
 "name": &"default",
@@ -45,7 +45,7 @@ anti_aliasing = false
 
 [node name="Spark" type="CharacterBody2D"]
 scale = Vector2(0.429688, 0.398438)
-script = ExtResource("2_jfskv")
+script = ExtResource("1_ee507")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.05176e-05, 0)
@@ -57,18 +57,23 @@ sprite_frames = SubResource("SpriteFrames_wixdc")
 position = Vector2(0, 0.000244141)
 shape = SubResource("RectangleShape2D_krwr3")
 
-[node name="SparkArea" type="Area2D" parent="."]
+[node name="Timers" type="Node" parent="."]
 
-[node name="SparkRadius" type="CollisionShape2D" parent="SparkArea"]
-position = Vector2(0, 0.00012207)
-shape = SubResource("RectangleShape2D_krwr3")
-
-[node name="DeathTimer" type="Timer" parent="."]
+[node name="DeathTimer" type="Timer" parent="Timers"]
 wait_time = 15.0
 one_shot = true
 autostart = true
 
-[node name="DeathProgress" type="ProgressBar" parent="."]
+[node name="Timer" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DeathProgress" type="ProgressBar" parent="UI"]
 offset_left = -76.7999
 offset_top = -92.8626
 offset_right = 79.2001
@@ -80,4 +85,12 @@ value = 15.0
 allow_greater = true
 show_percentage = false
 
-[connection signal="body_entered" from="SparkArea" to="." method="_on_spark_area_body_entered"]
+[node name="TimerCountdown" type="Label" parent="UI"]
+offset_left = -69.8181
+offset_top = -145.568
+offset_right = 82.1819
+offset_bottom = -90.5684
+theme_override_font_sizes/font_size = 40
+text = "Time lol"
+
+[connection signal="timeout" from="Timers/Timer" to="." method="_on_timer_timeout"]

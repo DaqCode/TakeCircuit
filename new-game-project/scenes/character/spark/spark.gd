@@ -1,8 +1,10 @@
+class_name Spark
 extends CharacterBody2D
 
 #Onready variables
-@onready var deathProgress := $DeathProgress
-@onready var lifeTimer := $DeathTimer
+@onready var deathProgress := $UI/DeathProgress
+@onready var lifeTimer := $Timers/DeathTimer
+@onready var deathText := $UI/TimerCountdown
 
 # Constants
 const GRAVITY = 1300.0  # Downward force
@@ -20,13 +22,19 @@ var coyote_timer = 0.0
 var can_dash = true
 var is_wall_clinging = false
 
-
 # References
 @onready var sprite := $AnimatedSprite2D
 
 func _ready() -> void:
+	#Timer for text to see increase
+	$Timers/Timer.start()
+
 	lifeTimer.wait_time = 15
 	lifeTimer.start()
+
+	deathText.text = str(lifeTimer.time_left)
+
+	EventBus.connect("battery_collected", Callable(self, "on_battery_collected"))
 
 
 func _physics_process(delta):
@@ -82,15 +90,14 @@ func _physics_process(delta):
 	# Apply velocity
 	move_and_slide()
 
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void:	 
 	deathProgress.value = lifeTimer.time_left
 
-func _on_spark_area_body_entered(body: Object) -> void:
-	if body.name != "Spark":
-		print(body.name)
-		print(body.get_class())  # Print the class of the body object
-		
-		if body.name == "Battery":
-			print("Increasing life force")
-			lifeTimer.wait_time += 5
-			body.queue_free()  # Remove the battery collecting area
+
+
+func on_battery_collected() -> void:
+	lifeTimer.wait_time += 5
+	lifeTimer.start()
+
+func _on_timer_timeout() -> void:
+	deathText.text = "Time left: " + str(roundi(lifeTimer.time_left))
