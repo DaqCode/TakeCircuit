@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://vn1jua6tyfah" path="res://resources/art/pickUps/battery.png" id="1_egthf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uglyr"]
-size = Vector2(28, 44)
+size = Vector2(4, 8)
 
 [node name="Battery" type="Area2D"]
 script = ExtResource("1_1cjkq")
 
 [node name="BatteryArt" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(0.045, 0.045)
 texture = ExtResource("1_egthf")
 
 [node name="BatteryCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_uglyr")
 
 [connection signal="body_entered" from="." to="." method="_on_battery_entered"]

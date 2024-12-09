@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm41tggvbpinh"]
+[gd_scene load_steps=8 format=3 uid="uid://bm41tggvbpinh"]
 
 [ext_resource type="Script" path="res://scenes/character/spark/spark.gd" id="1_ee507"]
+[ext_resource type="Texture2D" uid="uid://dp14k6rwbhrow" path="res://resources/misc/lightcircle.png" id="2_la3no"]
 [ext_resource type="Texture2D" uid="uid://dtrc2lemhltn1" path="res://icon.svg" id="2_qvspv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wixdc"]
@@ -15,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krwr3"]
-size = Vector2(130.327, 130.51)
+size = Vector2(27.9272, 30.1178)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xphe"]
 bg_color = Color(0.980392, 0, 0, 1)
@@ -47,14 +48,21 @@ anti_aliasing = false
 scale = Vector2(0.429688, 0.398438)
 script = ExtResource("1_ee507")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-4.65454, 0)
+scale = Vector2(5, 5)
+energy = 4.6
+texture = ExtResource("2_la3no")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.227273, 0.245098)
 sprite_frames = SubResource("SpriteFrames_wixdc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4.5, 4.5)
 
 [node name="SparkCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.000244141)
+position = Vector2(3.10724e-05, -9.09542e-05)
 shape = SubResource("RectangleShape2D_krwr3")
 
 [node name="Timers" type="Node" parent="."]
@@ -74,10 +82,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="DeathProgress" type="ProgressBar" parent="UI"]
-offset_left = -76.7999
-offset_top = -92.8626
-offset_right = 79.2001
-offset_bottom = -65.8626
+layout_mode = 0
+offset_left = -32.5818
+offset_top = -25.098
+offset_right = 32.4182
+offset_bottom = -12.098
 theme_override_styles/background = SubResource("StyleBoxFlat_8xphe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3rbua")
 max_value = 25.0
@@ -86,10 +95,11 @@ allow_greater = true
 show_percentage = false
 
 [node name="TimerCountdown" type="Label" parent="UI"]
-offset_left = -69.8181
-offset_top = -145.568
-offset_right = 82.1819
-offset_bottom = -90.5684
+layout_mode = 0
+offset_left = -74.4726
+offset_top = -110.431
+offset_right = 77.5274
+offset_bottom = -55.4316
 theme_override_font_sizes/font_size = 40
 text = "Time lol"
 
