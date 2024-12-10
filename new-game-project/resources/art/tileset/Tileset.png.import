@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6uu5ny1e2e56"
-path="res://.godot/imported/battery.png-d8160e042bddb739921938db309c5234.ctex"
+uid="uid://7gbb7qpnlgdb"
+path="res://.godot/imported/Tileset.png-ec7556b3cb23ec8616dd619639164a59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/art/pickUps/battery.png"
-dest_files=["res://.godot/imported/battery.png-d8160e042bddb739921938db309c5234.ctex"]
+source_file="res://resources/art/tileset/Tileset.png"
+dest_files=["res://.godot/imported/Tileset.png-ec7556b3cb23ec8616dd619639164a59.ctex"]
 
 [params]
 

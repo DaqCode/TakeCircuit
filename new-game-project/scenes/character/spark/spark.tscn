@@ -1,22 +1,109 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm41tggvbpinh"]
+[gd_scene load_steps=18 format=3 uid="uid://bm41tggvbpinh"]
 
 [ext_resource type="Script" path="res://scenes/character/spark/spark.gd" id="1_ee507"]
 [ext_resource type="Texture2D" uid="uid://dp14k6rwbhrow" path="res://resources/misc/lightcircle.png" id="2_la3no"]
-[ext_resource type="Texture2D" uid="uid://dtrc2lemhltn1" path="res://icon.svg" id="2_qvspv"]
+[ext_resource type="Texture2D" uid="uid://bpdcsbxuwc412" path="res://resources/art/character/spark/SparkSprite.png" id="3_732w5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wixdc"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_07mba"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-2.5, 14.44, 0)
+angle_min = 1.07288e-05
+angle_max = 360.0
+initial_velocity_min = -200.0
+initial_velocity_max = -100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+scale_max = 0.7
+color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w23a"]
+atlas = ExtResource("3_732w5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jcaq"]
+atlas = ExtResource("3_732w5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u630s"]
+atlas = ExtResource("3_732w5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woar7"]
+atlas = ExtResource("3_732w5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2auel"]
+atlas = ExtResource("3_732w5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s73u"]
+atlas = ExtResource("3_732w5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ggwx"]
+atlas = ExtResource("3_732w5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uohr"]
+atlas = ExtResource("3_732w5")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flxxm"]
+atlas = ExtResource("3_732w5")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5bku"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qvspv")
+"texture": SubResource("AtlasTexture_3w23a")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jcaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u630s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woar7")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2auel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s73u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ggwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uohr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flxxm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krwr3"]
-size = Vector2(27.9272, 30.1178)
+size = Vector2(32.5818, 27.6078)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xphe"]
 bg_color = Color(0.980392, 0, 0, 1)
@@ -48,21 +135,29 @@ anti_aliasing = false
 scale = Vector2(0.429688, 0.398438)
 script = ExtResource("1_ee507")
 
+[node name="RunParticles" type="GPUParticles2D" parent="."]
+position = Vector2(-2.32727, 2.5098)
+rotation = 0.543927
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_07mba")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-4.65454, 0)
+position = Vector2(0, -9.53674e-07)
 scale = Vector2(5, 5)
 energy = 4.6
 texture = ExtResource("2_la3no")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.227273, 0.245098)
-sprite_frames = SubResource("SpriteFrames_wixdc")
+[node name="SparkAnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1.079)
+sprite_frames = SubResource("SpriteFrames_h5bku")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4.5, 4.5)
+zoom = Vector2(8, 8)
 
 [node name="SparkCollision" type="CollisionShape2D" parent="."]
-position = Vector2(3.10724e-05, -9.09542e-05)
+position = Vector2(0, 2.44)
 shape = SubResource("RectangleShape2D_krwr3")
 
 [node name="Timers" type="Node" parent="."]
@@ -78,15 +173,17 @@ autostart = true
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -20.9454
+offset_top = -17.5686
+offset_right = 19.0546
+offset_bottom = 22.4314
 
 [node name="DeathProgress" type="ProgressBar" parent="UI"]
 layout_mode = 0
-offset_left = -32.5818
-offset_top = -25.098
-offset_right = 32.4182
-offset_bottom = -12.098
+offset_left = 4.65454
+offset_right = 69.6545
+offset_bottom = 13.0
+scale = Vector2(0.5, 0.5)
 theme_override_styles/background = SubResource("StyleBoxFlat_8xphe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3rbua")
 max_value = 25.0
@@ -96,10 +193,11 @@ show_percentage = false
 
 [node name="TimerCountdown" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = -74.4726
-offset_top = -110.431
-offset_right = 77.5274
-offset_bottom = -55.4316
+offset_left = 6.98181
+offset_top = -12.549
+offset_right = 158.982
+offset_bottom = 42.451
+scale = Vector2(0.175, 0.175)
 theme_override_font_sizes/font_size = 40
 text = "Time lol"
 

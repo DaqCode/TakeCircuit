@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6uu5ny1e2e56"
-path="res://.godot/imported/battery.png-d8160e042bddb739921938db309c5234.ctex"
+uid="uid://bpdcsbxuwc412"
+path="res://.godot/imported/SparkSprite.png-f19262c85b4f3a10ca3d29db6ca7f734.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/art/pickUps/battery.png"
-dest_files=["res://.godot/imported/battery.png-d8160e042bddb739921938db309c5234.ctex"]
+source_file="res://resources/art/character/spark/SparkSprite.png"
+dest_files=["res://.godot/imported/SparkSprite.png-f19262c85b4f3a10ca3d29db6ca7f734.ctex"]
 
 [params]
 

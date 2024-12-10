@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8gylsf5wp8g4"]
+
+[ext_resource type="Texture2D" uid="uid://dp14k6rwbhrow" path="res://resources/misc/lightcircle.png" id="1_i5ldf"]
+
+[node name="FlickerLight" type="PointLight2D"]
+color = Color(1, 1, 0, 1)
+energy = 4.0
+texture = ExtResource("1_i5ldf")
