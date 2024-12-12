@@ -6,17 +6,17 @@ extends CharacterBody2D
 @onready var lifeTimer := $Timers/DeathTimer
 @onready var deathText := $UI/TimerCountdown
 @onready var lightForce := $PointLight2D
-@onready var runningPFX := $RunParticles
+@onready var runningPFX := $PTX/RunParticles
 
 # Constants
 const GRAVITY = 700.0  # Downward force
 const JUMP_FORCE = -200.0  # Upward force
 const DASH_FORCE = 400.0  # Dash velocity
-const WALL_SLIDE_SPEED = 20.0  # Maximum downward speed when sliding
+const WALL_SLIDE_SPEED = 0.0  # Maximum downward speed when sliding
 const COYOTE_TIME = 0.15  # Buffer time after leaving a platform to still jump
 const DASH_TIME = 0.15  # Duration of a dash
 const MOVE_SPEED = 150.0  # Horizontal movement speed
-const WALL_JUMP_PUSHBACK = 500.0 # Wall jump pushing to prevent wall jump on one side
+
 
 # Variables
 var is_dashing = false
@@ -27,7 +27,6 @@ var is_wall_clinging = false
 
 # Checks
 var is_jumping = false
-var is_wall_jumping = false
 
 # References
 @onready var sprite := $SparkAnimatedSprite
@@ -74,14 +73,6 @@ func _physics_process(delta):
 			velocity.y = JUMP_FORCE
 			is_jumping = true
 
-		if is_on_wall():
-			var wall_side = get_wall_side()
-			if wall_side == "left":
-				velocity.x = WALL_JUMP_PUSHBACK
-			elif wall_side == "right":
-				velocity.x = -WALL_JUMP_PUSHBACK
-			velocity.y = JUMP_FORCE
-
 	# Falling
 	if not is_on_floor() and velocity.y > 0:
 		sprite.play("fall")
@@ -94,14 +85,9 @@ func _physics_process(delta):
 	# Wall clinging
 	if is_on_wall() and not is_on_floor() and velocity.y > 0:
 		is_wall_clinging = true
-		velocity.y = min(velocity.y, WALL_SLIDE_SPEED)
-
-		# if Input.is_action_pressed("up"):
-		# 	velocity.y = 0
+		velocity.y = 0
 	else:
 		is_wall_clinging = false
-	
-
 
 	# Jumping with coyote time
 	if is_on_floor():
@@ -115,20 +101,47 @@ func _physics_process(delta):
 		is_wall_clinging = false
 		sprite.play("jump")
 
-
 	# Dashing
 	if Input.is_action_just_pressed("dash") and can_dash:
 		is_dashing = true
 		dash_timer = DASH_TIME
 		can_dash = false
-		velocity = Input.get_vector("left", "right", "jump", "down").normalized() * DASH_FORCE
+		var dash_direction = Vector2.ZERO
 
+		# Determine dash direction based on input
+		if Input.is_action_pressed("right"):
+			dash_direction.x += 1
+		if Input.is_action_pressed("left"):
+			dash_direction.x -= 1
+		if Input.is_action_pressed("up"):
+			dash_direction.y -= 1
+
+
+		dash_direction = dash_direction.normalized()
+		velocity = dash_direction * DASH_FORCE
+
+		# Play dash animation based on direction
+		if dash_direction.y < -0.5:  # North or diagonal North
+			if dash_direction.x > 0.5:  # NE
+				sprite.play("dash_NE")
+			elif dash_direction.x < -0.5:  # NW
+				sprite.play("dash_NW")
+			else:  # N
+				sprite.play("dash_N")
+
+		elif dash_direction.y == 0.0:  # Horizontal dashes
+			if dash_direction.x > 0.5:  # E
+				sprite.play("dash_E")
+			elif dash_direction.x < -0.5:  # W
+				sprite.play("dash_W")
+
+	# Update dash timer
 	if is_dashing:
 		dash_timer -= delta
 		if dash_timer <= 0:
-			is_dashing = false
+			is_dashing = false  # End dash when timer runs out
 
-	# Reset dash on landing
+	# Reset dash ability on landing or completion
 	if is_on_floor() and not is_dashing:
 		can_dash = true
 	
@@ -139,19 +152,15 @@ func _physics_process(delta):
 	# Apply velocity
 	move_and_slide()
 
-func get_wall_side():
-	if is_on_wall() and position.x < get_global_mouse_position().x:
-		return "left"
-	elif is_on_wall() and position.x > get_global_mouse_position().x:
-		return "right"
-	return ""
-
 func _process(_delta: float) -> void:	 
 	#Updates the value of the progress bar.
 	deathProgress.value = lifeTimer.time_left
 
 	#Updates the size of the light by adjusting scale.
 	lightForce.scale = Vector2(lifeTimer.time_left, lifeTimer.time_left)
+	
+	await get_tree().create_timer(0.5).timeout
+	print("Velocity: ", velocity)
 	
 
 func on_battery_collected() -> void:

@@ -1,24 +1,52 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm41tggvbpinh"]
+[gd_scene load_steps=29 format=3 uid="uid://bm41tggvbpinh"]
 
 [ext_resource type="Script" path="res://scenes/character/spark/spark.gd" id="1_ee507"]
 [ext_resource type="Texture2D" uid="uid://dp14k6rwbhrow" path="res://resources/misc/lightcircle.png" id="2_la3no"]
 [ext_resource type="Texture2D" uid="uid://bpdcsbxuwc412" path="res://resources/art/character/spark/SparkSprite.png" id="3_732w5"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_07mba"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(-2.5, 14.44, 0)
-angle_min = 1.07288e-05
-angle_max = 360.0
-initial_velocity_min = -200.0
-initial_velocity_max = -100.0
-gravity = Vector3(0, 98, 0)
-scale_min = 0.5
-scale_max = 0.7
-color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe3kd"]
+atlas = ExtResource("3_732w5")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivyyr"]
+atlas = ExtResource("3_732w5")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faifs"]
+atlas = ExtResource("3_732w5")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwely"]
+atlas = ExtResource("3_732w5")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnfba"]
+atlas = ExtResource("3_732w5")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58cvp"]
+atlas = ExtResource("3_732w5")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf15l"]
+atlas = ExtResource("3_732w5")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ugqt"]
+atlas = ExtResource("3_732w5")
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3w23a"]
 atlas = ExtResource("3_732w5")
 region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg73y"]
+atlas = ExtResource("3_732w5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysx8l"]
+atlas = ExtResource("3_732w5")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jcaq"]
 atlas = ExtResource("3_732w5")
@@ -52,8 +80,76 @@ region = Rect2(96, 32, 32, 32)
 atlas = ExtResource("3_732w5")
 region = Rect2(128, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5ep"]
+atlas = ExtResource("3_732w5")
+region = Rect2(64, 64, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5bku"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe3kd")
+}],
+"loop": true,
+"name": &"dash_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivyyr")
+}],
+"loop": true,
+"name": &"dash_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faifs")
+}],
+"loop": true,
+"name": &"dash_NE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwely")
+}],
+"loop": true,
+"name": &"dash_NW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnfba")
+}],
+"loop": true,
+"name": &"dash_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58cvp")
+}],
+"loop": true,
+"name": &"dash_SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf15l")
+}],
+"loop": true,
+"name": &"dash_SW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ugqt")
+}],
+"loop": true,
+"name": &"dash_W",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3w23a")
@@ -61,6 +157,17 @@ animations = [{
 "loop": true,
 "name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg73y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysx8l")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,10 +207,30 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5ep")
+}],
+"loop": true,
+"name": &"wall_cling",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krwr3"]
 size = Vector2(32.5818, 27.6078)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_07mba"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-2.5, 14.44, 0)
+angle_min = 1.07288e-05
+angle_max = 360.0
+initial_velocity_min = -200.0
+initial_velocity_max = -100.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+scale_max = 0.7
+color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xphe"]
 bg_color = Color(0.980392, 0, 0, 1)
@@ -135,12 +262,6 @@ anti_aliasing = false
 scale = Vector2(0.429688, 0.398438)
 script = ExtResource("1_ee507")
 
-[node name="RunParticles" type="GPUParticles2D" parent="."]
-position = Vector2(-2.32727, 2.5098)
-rotation = 0.543927
-amount = 6
-process_material = SubResource("ParticleProcessMaterial_07mba")
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -9.53674e-07)
 scale = Vector2(5, 5)
@@ -150,8 +271,9 @@ texture = ExtResource("2_la3no")
 [node name="SparkAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 1.079)
 sprite_frames = SubResource("SpriteFrames_h5bku")
-animation = &"idle"
+animation = &"dash_SE"
 autoplay = "idle"
+frame_progress = 0.532671
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
@@ -169,6 +291,17 @@ autostart = true
 
 [node name="Timer" type="Timer" parent="Timers"]
 autostart = true
+
+[node name="PTX" type="Node" parent="."]
+
+[node name="RunParticles" type="GPUParticles2D" parent="PTX"]
+position = Vector2(-1, 1)
+rotation = 0.511094
+scale = Vector2(0.421546, 0.407042)
+skew = 0.0668358
+emitting = false
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_07mba")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

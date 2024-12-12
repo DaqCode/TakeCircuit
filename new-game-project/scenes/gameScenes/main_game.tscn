@@ -50,6 +50,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_m1btc")
 
 [node name="MainGame" type="Node2D"]
+position = Vector2(1105, 899)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1123.0
@@ -74,4 +75,4 @@ energy = 4.5
 [node name="Battery Packs" type="Node" parent="."]
 
 [node name="Battery" parent="Battery Packs" instance=ExtResource("3_avqih")]
-position = Vector2(349, 215)
+position = Vector2(1458, 1003)
