@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cg6r1eabd0pt2"]
+[gd_scene load_steps=38 format=3 uid="uid://cg6r1eabd0pt2"]
 
 [ext_resource type="Script" path="res://script/character/mortis/mortis.gd" id="1_3ldrt"]
 [ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="1_tmc61"]
 [ext_resource type="Texture2D" uid="uid://bqo4xq2m1hvaq" path="res://resource/art/characters/mortis/idle/MortisIdle0001.png" id="2_d3a4c"]
 [ext_resource type="Texture2D" uid="uid://cpq7pxky05exo" path="res://resource/art/characters/mortis/dash/MortDash0000.png" id="2_ngtqj"]
+[ext_resource type="PackedScene" uid="uid://gwr8ssds0par" path="res://scene/UI/poison_ball.tscn" id="2_wc134"]
 [ext_resource type="Texture2D" uid="uid://bco4jwu3du3wl" path="res://resource/art/characters/mortis/fall/MortFall.png" id="2_wvfft"]
 [ext_resource type="Texture2D" uid="uid://c8bljfw50jhl8" path="res://resource/art/characters/mortis/idle/MortisIdle0002.png" id="3_hi5no"]
 [ext_resource type="Texture2D" uid="uid://cve4m2wbaqen2" path="res://resource/art/characters/mortis/dash/MortDash0001.png" id="3_nvuck"]
@@ -23,6 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://dyngfw0ykvrr1" path="res://resource/art/characters/mortis/run/MortisRun0003.png" id="10_1618l"]
 [ext_resource type="Texture2D" uid="uid://whgfscsavvg3" path="res://resource/art/characters/mortis/dash/MortDash0008.png" id="10_uqgam"]
 [ext_resource type="Texture2D" uid="uid://erqpfp5ulxu7" path="res://resource/art/characters/mortis/dash/MortDash0009.png" id="11_aoal2"]
+[ext_resource type="Texture2D" uid="uid://b7llom2bp8xdr" path="res://resource/art/characters/mortis/death/MortDie0000.png" id="13_kaie5"]
+[ext_resource type="Texture2D" uid="uid://bw67hdhv2s67k" path="res://resource/art/characters/mortis/death/MortDie0001.png" id="14_ks7x4"]
+[ext_resource type="Texture2D" uid="uid://i8fs5ihq1t3h" path="res://resource/art/characters/mortis/death/MortDie0002.png" id="15_aca6g"]
+[ext_resource type="Texture2D" uid="uid://frar7uyxjrhx" path="res://resource/art/characters/mortis/death/MortDie0003.png" id="16_4sno4"]
+[ext_resource type="Texture2D" uid="uid://b8mjfwdxwxxco" path="res://resource/art/characters/mortis/death/MortDie0004.png" id="17_ughxc"]
+[ext_resource type="Texture2D" uid="uid://c5mqrfy4q6o8x" path="res://resource/art/characters/mortis/death/MortDie0005.png" id="18_xdlde"]
+[ext_resource type="Texture2D" uid="uid://sliery37pmgy" path="res://resource/art/characters/mortis/death/MortDie0006.png" id="19_evysg"]
+[ext_resource type="Texture2D" uid="uid://bq11ukslpba5q" path="res://resource/art/characters/mortis/death/MortDie0007.png" id="20_7miwg"]
+[ext_resource type="Theme" uid="uid://df8oqa51jw3qp" path="res://resource/themes/dashBar.tres" id="25_3u8rg"]
+[ext_resource type="Theme" uid="uid://cclu23yuqvmx4" path="res://resource/themes/fireBar.tres" id="26_sl1b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3sai"]
 size = Vector2(14.5, 25.5)
@@ -67,12 +78,36 @@ animations = [{
 }],
 "loop": false,
 "name": &"Dash",
-"speed": 24.0
+"speed": 28.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kaie5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ks7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aca6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4sno4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ughxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xdlde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_evysg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7miwg")
+}],
 "loop": true,
 "name": &"Death",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -136,8 +171,18 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_51kpc"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 360.0
+initial_velocity_min = -300.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 98, 0)
+color = Color(0.235294, 0.639216, 0.439216, 1)
+
 [node name="Mortis" type="CharacterBody2D"]
 script = ExtResource("1_3ldrt")
+fireball_scene = ExtResource("2_wc134")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
@@ -145,7 +190,9 @@ shape = SubResource("RectangleShape2D_v3sai")
 
 [node name="MortisAnimations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcrgs")
-animation = &"Run"
+animation = &"Dash"
+frame = 9
+frame_progress = 1.0
 
 [node name="MortisArea" type="Area2D" parent="."]
 
@@ -155,6 +202,42 @@ shape = SubResource("RectangleShape2D_v3sai")
 debug_color = Color(0.989044, 0, 0.29505, 0.42)
 
 [node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Cooldowns" type="GridContainer" parent="."]
+offset_left = -116.0
+offset_top = -73.0
+offset_right = 117.0
+offset_bottom = -15.0
+
+[node name="Dash" type="ProgressBar" parent="Cooldowns"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("25_3u8rg")
+show_percentage = false
+
+[node name="Shooting" type="ProgressBar" parent="Cooldowns"]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("26_sl1b5")
+show_percentage = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_51kpc")
+lifetime = 0.9
+explosiveness = 1.0
 
 [connection signal="animation_finished" from="MortisAnimations" to="." method="_on_mortis_animation_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

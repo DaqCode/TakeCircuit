@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://duta6nhxw46f5"]
+
+[ext_resource type="Texture2D" uid="uid://bpa4vpw0lft8" path="res://resource/art/object/poisonVial.png" id="1_gjuhu"]
+[ext_resource type="Script" path="res://scene/items/PoisonVial/poison_vial.gd" id="1_p63y7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mbgi"]
+radius = 6.4
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_jxiek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PoisonVial:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_njfro"]
+resource_name = "heSpin"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PoisonVial:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.85, 0), Vector2(-0.85, -2), Vector2(-0.85, 0), Vector2(-0.85, 0.5), Vector2(-0.85, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4krxs"]
+_data = {
+"RESET": SubResource("Animation_jxiek"),
+"heSpin": SubResource("Animation_njfro")
+}
+
+[node name="PoisonVial" type="Area2D"]
+script = ExtResource("1_p63y7")
+
+[node name="PoisonVial" type="Sprite2D" parent="."]
+texture = ExtResource("1_gjuhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.47, -1)
+shape = SubResource("CapsuleShape2D_0mbgi")
+
+[node name="Spin" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4krxs")
+}
+autoplay = "heSpin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

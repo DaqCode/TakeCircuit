@@ -23,3 +23,13 @@ func _on_poison_changed(current: float, max: float) -> void:
 func _on_player_died() -> void:
 	print("Player has died – Game Over!")
 	# Here you could trigger a game over screen or restart the level.
+
+
+func _on_area_2d_body_entered(body:Node2D) -> void:
+	if body.name == "Mortis":
+		self.modulate = Color("#ffffff62")
+
+
+func _on_area_2d_body_exited(body:Node2D) -> void:
+	if body.name == "Mortis":
+		self.modulate = Color("#ffffff")

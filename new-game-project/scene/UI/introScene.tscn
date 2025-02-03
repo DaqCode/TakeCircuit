@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvkvvusjl46h7"]
+
+[ext_resource type="Script" path="res://scene/UI/intro_scene.gd" id="1_bh0yq"]
+[ext_resource type="VideoStream" path="res://resource/Sounds/animations/GameIntros1.ogv" id="1_up8pk"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bh0yq")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_up8pk")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
