@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cilungqen1wwe"]
+[gd_scene load_steps=6 format=3 uid="uid://cilungqen1wwe"]
 
 [ext_resource type="Texture2D" uid="uid://dtrc2lemhltn1" path="res://icon.svg" id="1_70vdq"]
 [ext_resource type="PackedScene" uid="uid://cg6r1eabd0pt2" path="res://scene/characters/mortis.tscn" id="1_sckn2"]
+[ext_resource type="PackedScene" uid="uid://bgbqse4drf67p" path="res://scene/UI/progress_bar.tscn" id="3_oe8qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rnr6b"]
 texture = ExtResource("1_70vdq")
@@ -27,3 +28,9 @@ layer_0/tile_data = PackedInt32Array(2031618, 131072, 4, 2031619, 196608, 4, 203
 
 [node name="Mortis" parent="." instance=ExtResource("1_sckn2")]
 position = Vector2(78, 363)
+
+[node name="ProgressBar" parent="." instance=ExtResource("3_oe8qy")]
+offset_left = -19.0
+offset_top = -4.0
+offset_right = -19.0
+offset_bottom = -4.0

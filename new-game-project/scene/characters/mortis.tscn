@@ -1,17 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg6r1eabd0pt2"]
+[gd_scene load_steps=26 format=3 uid="uid://cg6r1eabd0pt2"]
 
 [ext_resource type="Script" path="res://script/character/mortis/mortis.gd" id="1_3ldrt"]
 [ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="1_tmc61"]
 [ext_resource type="Texture2D" uid="uid://bqo4xq2m1hvaq" path="res://resource/art/characters/mortis/idle/MortisIdle0001.png" id="2_d3a4c"]
+[ext_resource type="Texture2D" uid="uid://cpq7pxky05exo" path="res://resource/art/characters/mortis/dash/MortDash0000.png" id="2_ngtqj"]
+[ext_resource type="Texture2D" uid="uid://bco4jwu3du3wl" path="res://resource/art/characters/mortis/fall/MortFall.png" id="2_wvfft"]
 [ext_resource type="Texture2D" uid="uid://c8bljfw50jhl8" path="res://resource/art/characters/mortis/idle/MortisIdle0002.png" id="3_hi5no"]
+[ext_resource type="Texture2D" uid="uid://cve4m2wbaqen2" path="res://resource/art/characters/mortis/dash/MortDash0001.png" id="3_nvuck"]
 [ext_resource type="Texture2D" uid="uid://dq2l78s0umkc0" path="res://resource/art/characters/mortis/idle/MortisIdle0003.png" id="4_0y81y"]
+[ext_resource type="Texture2D" uid="uid://cnx67e43bdrxe" path="res://resource/art/characters/mortis/dash/MortDash0002.png" id="4_yeqhn"]
+[ext_resource type="Texture2D" uid="uid://cua15itewhfev" path="res://resource/art/characters/mortis/dash/MortDash0003.png" id="5_6tbet"]
 [ext_resource type="Texture2D" uid="uid://bi1hdebpeorfe" path="res://resource/art/characters/mortis/idle/MortisIdle0004.png" id="5_653ew"]
+[ext_resource type="Texture2D" uid="uid://bylpk80ylxwn0" path="res://resource/art/characters/mortis/dash/MortDash0004.png" id="6_0a3ys"]
 [ext_resource type="Texture2D" uid="uid://b1ne61ww47q0t" path="res://resource/art/characters/mortis/idle/MortisIdle0006.png" id="6_fofdc"]
 [ext_resource type="Texture2D" uid="uid://bp1st7fgwfjlc" path="res://resource/art/characters/mortis/run/MortisRun0000.png" id="7_aalgu"]
+[ext_resource type="Texture2D" uid="uid://bwemq75d0xlea" path="res://resource/art/characters/mortis/dash/MortDash0005.png" id="7_eto43"]
 [ext_resource type="Texture2D" uid="uid://dembo4gascokr" path="res://resource/art/characters/mortis/jump/MortJump.png" id="7_ppjfb"]
+[ext_resource type="Texture2D" uid="uid://d1iui5p5vi0p8" path="res://resource/art/characters/mortis/dash/MortDash0006.png" id="8_4ayh3"]
 [ext_resource type="Texture2D" uid="uid://bdcoiwlvbhtgs" path="res://resource/art/characters/mortis/run/MortisRun0001.png" id="8_mh6mj"]
+[ext_resource type="Texture2D" uid="uid://c7tq4lqqnq2nm" path="res://resource/art/characters/mortis/dash/MortDash0007.png" id="9_4pmje"]
 [ext_resource type="Texture2D" uid="uid://cmghajvclqdh1" path="res://resource/art/characters/mortis/run/MortisRun0002.png" id="9_dvagi"]
 [ext_resource type="Texture2D" uid="uid://dyngfw0ykvrr1" path="res://resource/art/characters/mortis/run/MortisRun0003.png" id="10_1618l"]
+[ext_resource type="Texture2D" uid="uid://whgfscsavvg3" path="res://resource/art/characters/mortis/dash/MortDash0008.png" id="10_uqgam"]
+[ext_resource type="Texture2D" uid="uid://erqpfp5ulxu7" path="res://resource/art/characters/mortis/dash/MortDash0009.png" id="11_aoal2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3sai"]
 size = Vector2(14.5, 25.5)
@@ -23,12 +34,50 @@ animations = [{
 "name": &"Damage",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ngtqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nvuck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yeqhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6tbet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0a3ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eto43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ayh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4pmje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uqgam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aoal2")
+}],
+"loop": false,
+"name": &"Dash",
+"speed": 24.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"Death",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvfft")
+}],
 "loop": true,
 "name": &"Fall",
 "speed": 5.0
@@ -96,8 +145,9 @@ shape = SubResource("RectangleShape2D_v3sai")
 
 [node name="MortisAnimations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcrgs")
-animation = &"Idle"
-autoplay = "Idle"
+animation = &"Dash"
+frame = 9
+frame_progress = 1.0
 
 [node name="MortisArea" type="Area2D" parent="."]
 
