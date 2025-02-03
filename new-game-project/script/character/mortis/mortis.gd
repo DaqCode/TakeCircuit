@@ -18,7 +18,12 @@ var coyote_time: float = 0.25
 @onready var mortis_animation := $MortisAnimations
 
 func _physics_process(delta: float) -> void:
+
+
 	var input_direction: Vector2 = Vector2.ZERO
+
+	if is_dashing:
+		velocity.y = 0
 
 	# Basic horizontal movement
 	if Input.is_action_pressed("left") and not is_dashing:
@@ -59,6 +64,10 @@ func _physics_process(delta: float) -> void:
 			mortis_animation.play("Fall")
 		
 	if Input.is_action_just_pressed("dash") and can_dash and not is_dashing:
+		can_dash = false
+		is_dashing = true
+		# mortis_animation.stop()  # Stop the current animation
+		# mortis_animation.play("Dash")
 		input_direction= Vector2.ZERO
 
 		# Basic horizontal movement
@@ -66,30 +75,26 @@ func _physics_process(delta: float) -> void:
 			input_direction.x -= 1
 		elif Input.is_action_pressed("right"):
 			input_direction.x += 1
-	
-		can_dash = false
-		is_dashing = true
 
 		if input_direction.x < 0:
 			dash_direction = -12
 			Global.apply_poison_damage(15)
+
 		elif input_direction.x > 0:
 			dash_direction = 12
 			Global.apply_poison_damage(15)
+
 		else:
 			print("NO input, no dashing")
 			dash_direction = 0
-			pass
-		
+
 		velocity.x = dash_direction * dash_speed
+
 		if velocity.y > 0:
 			velocity.y = 0
-		
-		is_dashing = false
-		
-		$DashTimer.start()
-		
 
+		is_dashing = false
+		$DashTimer.start()
 	move_and_slide()
 
 
@@ -100,3 +105,9 @@ func _on_dash_timer_timeout() -> void:
 func take_damage(amount: float, knockback: Vector2) -> void:
 	Global.apply_poison_damage(amount)
 	velocity += knockback
+
+func _on_mortis_animation_finished() -> void:
+	if mortis_animation.animation == "Dash":
+		is_dashing = false
+		mortis_animation.play("Idle")
+	

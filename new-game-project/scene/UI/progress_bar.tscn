@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgbqse4drf67p"]
+[gd_scene load_steps=3 format=3 uid="uid://bgbqse4drf67p"]
 
 [ext_resource type="Script" path="res://script/UI/progress_bar.gd" id="1_3bbwr"]
+[ext_resource type="Theme" uid="uid://dqy1n6yabj485" path="res://resource/themes/poisonBar.tres" id="2_tbgvb"]
 
 [node name="ProgressBar" type="Control"]
 layout_mode = 3
@@ -15,7 +16,9 @@ script = ExtResource("1_3bbwr")
 layout_mode = 0
 offset_left = 26.0
 offset_top = 430.0
-offset_right = 438.0
-offset_bottom = 507.0
+offset_right = 442.0
+offset_bottom = 467.0
 rotation = -1.5708
+theme = ExtResource("2_tbgvb")
 value = 100.0
+show_percentage = false
