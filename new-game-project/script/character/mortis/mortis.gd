@@ -174,6 +174,8 @@ func launch_fireball() -> void:
 	var fireball = fireball_scene.instantiate()
 	
 	var spawn_position = global_position
+	mortis_animation.play("PoisonBall")
+	mortis_animation.play("Idle")
 	if mortis_animation.flip_h:
 		spawn_position -= Vector2(fireball_offset.x, fireball_offset.y)
 	else:
@@ -223,3 +225,11 @@ func _on_dash_bar_updated() -> void:
 
 func _on_fireball_bar_updated() -> void:
 	update_fireball_bar()
+
+func when_die() -> void:
+	set_process_input(false)  # Disable input for this script
+	await is_on_floor()
+	mortis_animation.play("Death")
+	await get_tree().create_timer(2.0).timeout
+	set_process_input(true)  # Re-enable input after death
+	get_tree().reload_current_scene()

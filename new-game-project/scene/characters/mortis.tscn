@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cg6r1eabd0pt2"]
+[gd_scene load_steps=52 format=3 uid="uid://cg6r1eabd0pt2"]
 
 [ext_resource type="Script" path="res://script/character/mortis/mortis.gd" id="1_3ldrt"]
 [ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="1_tmc61"]
@@ -7,23 +7,32 @@
 [ext_resource type="PackedScene" uid="uid://gwr8ssds0par" path="res://scene/UI/poison_ball.tscn" id="2_wc134"]
 [ext_resource type="Texture2D" uid="uid://bco4jwu3du3wl" path="res://resource/art/characters/mortis/fall/MortFall.png" id="2_wvfft"]
 [ext_resource type="Texture2D" uid="uid://c8bljfw50jhl8" path="res://resource/art/characters/mortis/idle/MortisIdle0002.png" id="3_hi5no"]
+[ext_resource type="Texture2D" uid="uid://ckdwfu1hvk7s" path="res://resource/art/characters/mortis/damage/MortDamage0000.png" id="3_mg2ry"]
 [ext_resource type="Texture2D" uid="uid://cve4m2wbaqen2" path="res://resource/art/characters/mortis/dash/MortDash0001.png" id="3_nvuck"]
 [ext_resource type="Texture2D" uid="uid://dq2l78s0umkc0" path="res://resource/art/characters/mortis/idle/MortisIdle0003.png" id="4_0y81y"]
 [ext_resource type="Texture2D" uid="uid://cnx67e43bdrxe" path="res://resource/art/characters/mortis/dash/MortDash0002.png" id="4_yeqhn"]
+[ext_resource type="Texture2D" uid="uid://diok6eqo18g57" path="res://resource/art/characters/mortis/damage/MortDamage0001.png" id="4_yybej"]
 [ext_resource type="Texture2D" uid="uid://cua15itewhfev" path="res://resource/art/characters/mortis/dash/MortDash0003.png" id="5_6tbet"]
 [ext_resource type="Texture2D" uid="uid://bi1hdebpeorfe" path="res://resource/art/characters/mortis/idle/MortisIdle0004.png" id="5_653ew"]
+[ext_resource type="Texture2D" uid="uid://cljp0w3emldby" path="res://resource/art/characters/mortis/damage/MortDamage0002.png" id="5_wm61a"]
 [ext_resource type="Texture2D" uid="uid://bylpk80ylxwn0" path="res://resource/art/characters/mortis/dash/MortDash0004.png" id="6_0a3ys"]
+[ext_resource type="Texture2D" uid="uid://do476g1axhcsi" path="res://resource/art/characters/mortis/damage/MortDamage0003.png" id="6_df8gp"]
 [ext_resource type="Texture2D" uid="uid://b1ne61ww47q0t" path="res://resource/art/characters/mortis/idle/MortisIdle0006.png" id="6_fofdc"]
 [ext_resource type="Texture2D" uid="uid://bp1st7fgwfjlc" path="res://resource/art/characters/mortis/run/MortisRun0000.png" id="7_aalgu"]
 [ext_resource type="Texture2D" uid="uid://bwemq75d0xlea" path="res://resource/art/characters/mortis/dash/MortDash0005.png" id="7_eto43"]
 [ext_resource type="Texture2D" uid="uid://dembo4gascokr" path="res://resource/art/characters/mortis/jump/MortJump.png" id="7_ppjfb"]
+[ext_resource type="Texture2D" uid="uid://c0dq844mpyp6r" path="res://resource/art/characters/mortis/damage/MortDamage0004.png" id="7_rdpuf"]
 [ext_resource type="Texture2D" uid="uid://d1iui5p5vi0p8" path="res://resource/art/characters/mortis/dash/MortDash0006.png" id="8_4ayh3"]
+[ext_resource type="Texture2D" uid="uid://nesdgdrqnquh" path="res://resource/art/characters/mortis/damage/MortDamage0005.png" id="8_js41l"]
 [ext_resource type="Texture2D" uid="uid://bdcoiwlvbhtgs" path="res://resource/art/characters/mortis/run/MortisRun0001.png" id="8_mh6mj"]
 [ext_resource type="Texture2D" uid="uid://c7tq4lqqnq2nm" path="res://resource/art/characters/mortis/dash/MortDash0007.png" id="9_4pmje"]
 [ext_resource type="Texture2D" uid="uid://cmghajvclqdh1" path="res://resource/art/characters/mortis/run/MortisRun0002.png" id="9_dvagi"]
+[ext_resource type="Texture2D" uid="uid://duljli75onj2x" path="res://resource/art/characters/mortis/damage/MortDamage0006.png" id="9_jqt4n"]
+[ext_resource type="Texture2D" uid="uid://d2mxbgu0is53y" path="res://resource/art/characters/mortis/damage/MortDamage0007.png" id="10_75kqj"]
 [ext_resource type="Texture2D" uid="uid://dyngfw0ykvrr1" path="res://resource/art/characters/mortis/run/MortisRun0003.png" id="10_1618l"]
 [ext_resource type="Texture2D" uid="uid://whgfscsavvg3" path="res://resource/art/characters/mortis/dash/MortDash0008.png" id="10_uqgam"]
 [ext_resource type="Texture2D" uid="uid://erqpfp5ulxu7" path="res://resource/art/characters/mortis/dash/MortDash0009.png" id="11_aoal2"]
+[ext_resource type="Texture2D" uid="uid://bdqx1b5417iuv" path="res://resource/art/characters/mortis/damage/MortDamage0008.png" id="11_phe78"]
 [ext_resource type="Texture2D" uid="uid://b7llom2bp8xdr" path="res://resource/art/characters/mortis/death/MortDie0000.png" id="13_kaie5"]
 [ext_resource type="Texture2D" uid="uid://bw67hdhv2s67k" path="res://resource/art/characters/mortis/death/MortDie0001.png" id="14_ks7x4"]
 [ext_resource type="Texture2D" uid="uid://i8fs5ihq1t3h" path="res://resource/art/characters/mortis/death/MortDie0002.png" id="15_aca6g"]
@@ -34,16 +43,48 @@
 [ext_resource type="Texture2D" uid="uid://bq11ukslpba5q" path="res://resource/art/characters/mortis/death/MortDie0007.png" id="20_7miwg"]
 [ext_resource type="Theme" uid="uid://df8oqa51jw3qp" path="res://resource/themes/dashBar.tres" id="25_3u8rg"]
 [ext_resource type="Theme" uid="uid://cclu23yuqvmx4" path="res://resource/themes/fireBar.tres" id="26_sl1b5"]
+[ext_resource type="Texture2D" uid="uid://du2aadg2pmc7u" path="res://resource/art/characters/mortis/fire/MortFire0000.png" id="38_ethfe"]
+[ext_resource type="Texture2D" uid="uid://dska4wktrt8lm" path="res://resource/art/characters/mortis/fire/MortFire0001.png" id="39_sbsy2"]
+[ext_resource type="Texture2D" uid="uid://cc0wwyqk14mcb" path="res://resource/art/characters/mortis/fire/MortFire0002.png" id="40_axgct"]
+[ext_resource type="Texture2D" uid="uid://qrxehfpyhb1c" path="res://resource/art/characters/mortis/fire/MortFire0003.png" id="41_tu7my"]
+[ext_resource type="Texture2D" uid="uid://dehxsbxhlhxlo" path="res://resource/art/characters/mortis/fire/MortFire0004.png" id="42_kntex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3sai"]
 size = Vector2(14.5, 25.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcrgs"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mg2ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yybej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wm61a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_df8gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rdpuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_js41l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jqt4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_75kqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_phe78")
+}],
 "loop": true,
 "name": &"Damage",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,9 +146,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_7miwg")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
-"speed": 9.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -148,10 +189,25 @@ animations = [{
 "name": &"Jump",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_ethfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sbsy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_axgct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tu7my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_kntex")
+}],
+"loop": false,
 "name": &"PoisonBall",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -183,6 +239,12 @@ color = Color(0.235294, 0.639216, 0.439216, 1)
 [node name="Mortis" type="CharacterBody2D"]
 script = ExtResource("1_3ldrt")
 fireball_scene = ExtResource("2_wc134")
+fireball_offset = null
+speed = null
+jump_speed = null
+dash_speed = null
+gravity = null
+coyote_time_max = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
@@ -190,8 +252,8 @@ shape = SubResource("RectangleShape2D_v3sai")
 
 [node name="MortisAnimations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcrgs")
-animation = &"Dash"
-frame = 9
+animation = &"Death"
+frame = 7
 frame_progress = 1.0
 
 [node name="MortisArea" type="Area2D" parent="."]

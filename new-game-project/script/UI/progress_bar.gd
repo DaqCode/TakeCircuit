@@ -1,8 +1,9 @@
 extends Control
 
-
 func _ready() -> void:
-	# Assumes you have a ProgressBar node as a child named "PoisonBar".
+	await get_tree().create_timer(1.0).timeout
+	$PoisonBar.value = Global.poison_current
+	$PoisonBar.max_value = Global.poison_max
 	Global.connect("poison_changed", Callable( self, "_on_poison_changed"))
 	Global.connect("player_died", Callable(self, "_on_player_died"))
 
@@ -22,7 +23,8 @@ func _on_poison_changed(current: float, max: float) -> void:
 
 func _on_player_died() -> void:
 	print("Player has died – Game Over!")
-	# Here you could trigger a game over screen or restart the level.
+	var mortis = get_tree().current_scene.get_node("Mortis")
+	mortis.when_die()
 
 
 func _on_area_2d_body_entered(body:Node2D) -> void:
