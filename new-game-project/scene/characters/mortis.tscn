@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cg6r1eabd0pt2"]
+[gd_scene load_steps=53 format=3 uid="uid://cg6r1eabd0pt2"]
 
 [ext_resource type="Script" path="res://script/character/mortis/mortis.gd" id="1_3ldrt"]
 [ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="1_tmc61"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cc0wwyqk14mcb" path="res://resource/art/characters/mortis/fire/MortFire0002.png" id="40_axgct"]
 [ext_resource type="Texture2D" uid="uid://qrxehfpyhb1c" path="res://resource/art/characters/mortis/fire/MortFire0003.png" id="41_tu7my"]
 [ext_resource type="Texture2D" uid="uid://dehxsbxhlhxlo" path="res://resource/art/characters/mortis/fire/MortFire0004.png" id="42_kntex"]
+[ext_resource type="AudioStream" uid="uid://c570g2avhckf0" path="res://resource/Sounds/music/relaxing-piano-music-for-friday-261589.mp3" id="49_vdk1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3sai"]
 size = Vector2(14.5, 25.5)
@@ -296,6 +297,14 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_51kpc")
 lifetime = 0.9
 explosiveness = 1.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("49_vdk1n")
+volume_db = -9.75
+autoplay = true
 
 [connection signal="animation_finished" from="MortisAnimations" to="." method="_on_mortis_animation_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=4 uid="uid://mwbd4ui5a60o"]
+[gd_scene load_steps=19 format=4 uid="uid://mwbd4ui5a60o"]
 
 [ext_resource type="Theme" uid="uid://cv04lef3oqxtw" path="res://resource/themes/UIThemes/UiThemes.tres" id="1_kgnby"]
 [ext_resource type="Script" path="res://scene/UI/levelStuff/death_screen.gd" id="2_8uga1"]
 [ext_resource type="FontFile" uid="uid://b43kwvpw4gy2s" path="res://resource/art/fonts/Montserrat-Bold.ttf" id="2_t60fi"]
+[ext_resource type="Theme" uid="uid://dmgwgxwj8hfe1" path="res://resource/themes/mainMenuAreas.tres" id="4_82ugc"]
 
 [sub_resource type="Image" id="Image_6ghc6"]
 data = {
@@ -1460,6 +1461,7 @@ offset_top = 281.0
 offset_right = 416.0
 offset_bottom = 391.0
 pivot_offset = Vector2(141, 56)
+theme = ExtResource("4_82ugc")
 text = "Retry?"
 
 [node name="MainMenu" type="Button" parent="Panel"]
@@ -1469,6 +1471,7 @@ offset_top = 281.0
 offset_right = 846.0
 offset_bottom = 391.0
 pivot_offset = Vector2(141, 56)
+theme = ExtResource("4_82ugc")
 text = "Back to Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

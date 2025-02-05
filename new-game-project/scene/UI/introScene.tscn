@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://drt8mdpls2jqv"]
+[gd_scene load_steps=27 format=3 uid="uid://drt8mdpls2jqv"]
 
 [ext_resource type="Script" path="res://scene/UI/intro_scene.gd" id="1_bh0yq"]
 [ext_resource type="VideoStream" path="res://resource/Sounds/animations/GameIntros1.ogv" id="1_up8pk"]
 [ext_resource type="Texture2D" uid="uid://dtu7knau3s1hv" path="res://resource/Sounds/animations/Framse/introAnimation0000.png" id="3_30gbw"]
-[ext_resource type="AudioStream" uid="uid://d0mixxath1k00" path="res://resource/Sounds/animations/mortisIntro.mp3" id="3_32n6d"]
+[ext_resource type="AudioStream" uid="uid://d0mixxath1k00" path="res://resource/Sounds/sfx/mortisIntro.mp3" id="3_32n6d"]
 [ext_resource type="FontFile" uid="uid://b43kwvpw4gy2s" path="res://resource/art/fonts/Montserrat-Bold.ttf" id="4_aifhk"]
 [ext_resource type="Texture2D" uid="uid://vjnuhwoc7uk0" path="res://resource/Sounds/animations/Framse/introAnimation0001.png" id="5_klt2l"]
 [ext_resource type="Texture2D" uid="uid://d22vhh63mi5g0" path="res://resource/Sounds/animations/Framse/introAnimation0002.png" id="6_fukwk"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c8rgchne2vsll" path="res://resource/Sounds/animations/Framse/introAnimation0020.png" id="14_rdrhh"]
 [ext_resource type="Texture2D" uid="uid://c0hflf3lsdco7" path="res://resource/art/tileset/map.png" id="14_rydek"]
 [ext_resource type="Texture2D" uid="uid://bh8lwwdcyj3eq" path="res://resource/art/tileset/him.png" id="15_gieva"]
+[ext_resource type="AudioStream" uid="uid://dj18pdju0wbcx" path="res://resource/Sounds/animations/dark-horor-293085.mp3" id="16_idi0y"]
 [ext_resource type="Texture2D" uid="uid://dliayuveo6uvq" path="res://resource/Sounds/animations/shot.png" id="16_utjor"]
 
 [sub_resource type="Animation" id="Animation_ba3or"]
@@ -127,10 +128,34 @@ tracks/8/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer2:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-15.0]
+}
 
 [sub_resource type="Animation" id="Animation_l4wlo"]
 resource_name = "animationForIntro"
-length = 46.0
+length = 48.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -162,8 +187,8 @@ tracks/2/path = NodePath("Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.266667, 6.2, 6.23333, 7.03333, 7.1, 11.1749, 11.2333, 13.0333, 13.1333, 17.1333, 17.2333, 17.7667, 18.1667, 23.9333, 23.9667, 24.2333, 28.1333, 28.1667, 30.9667, 31.2, 38.0933, 41, 41.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.266667, 6.2, 6.23333, 7.03333, 7.1, 11.1749, 11.2333, 13.0333, 13.1333, 17.1333, 17.2333, 17.7667, 18.1667, 23.9333, 23.9667, 24.2333, 28.1333, 28.1667, 30.9667, 31.2, 38.0933, 41, 41.1333, 46.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["", "My name is Mort, short for Mortiz. And I have a story to tell for you.
 ", "My name is Mort, short for Mortiz. And I have a story to tell for you.
@@ -181,6 +206,7 @@ tracks/2/keys = {
 
 ", "
 ", "I must find the place. I must regain my sense of humanity.
+", "
 "]
 }
 tracks/3/type = "value"
@@ -255,12 +281,164 @@ tracks/8/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer2:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(46.3, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-15.0, -50.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7unum"]
 _data = {
 "RESET": SubResource("Animation_ba3or"),
 "animationForIntro": SubResource("Animation_l4wlo")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4upyg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7u8r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.921569, 0.337255, 0.294118, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.709804, 0.709804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+shadow_color = Color(1, 1, 0.921569, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iywp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.94902, 0.65098, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.709804, 0.709804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+shadow_color = Color(1, 1, 0.921569, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_id3c1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.690196, 0.188235, 0.360784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.709804, 0.709804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+shadow_color = Color(1, 1, 0.921569, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2ig5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdqc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.239216, 0.431373, 0.439216, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.258824, 0.141176, 0.270588, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+shadow_color = Color(0.560784, 0.870588, 0.364706, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_n1thx"]
+Button/colors/font_color = Color(1, 1, 0.921569, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_hover_color = Color(0.760784, 0.760784, 0.819608, 1)
+Button/colors/font_hover_pressed_color = Color(0.152941, 0.152941, 0.211765, 1)
+Button/colors/font_outline_color = Color(0.258824, 0.141176, 0.270588, 1)
+Button/colors/font_pressed_color = Color(0.376471, 0.376471, 0.439216, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("4_aifhk")
+Button/styles/disabled = SubResource("StyleBoxFlat_4upyg")
+Button/styles/hover = SubResource("StyleBoxFlat_e7u8r")
+Button/styles/normal = SubResource("StyleBoxFlat_8iywp")
+Button/styles/pressed = SubResource("StyleBoxFlat_id3c1")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("4_aifhk")
+Label/styles/normal = SubResource("StyleBoxEmpty_s2ig5")
+Panel/styles/panel = SubResource("StyleBoxFlat_mfdqc")
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -285,10 +463,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -516.0
-offset_right = -513.0
-offset_bottom = -516.0
+offset_left = -260.0
+offset_top = -352.0
+offset_right = -764.0
+offset_bottom = -352.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.105, 3.105)
@@ -332,12 +510,28 @@ autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_32n6d")
-volume_db = -6.0
+volume_db = -2.0
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7unum")
 }
 
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 164.0
+offset_bottom = 61.0
+theme = SubResource("Theme_n1thx")
+text = "Skip..?"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_idi0y")
+volume_db = -15.0
+pitch_scale = 0.9
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

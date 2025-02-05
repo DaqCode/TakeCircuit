@@ -106,6 +106,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_time > 0):
 		velocity.y = jump_speed
 		coyote_time = 0
+		$SFX.stream = load("res://resource/Sounds/sfx/jump.wav")
+		$SFX.play()
 		Global.apply_poison_damage(3)
 
 	# Airborne animation handling (only update if not dashing)
@@ -163,6 +165,8 @@ func dash() -> void:
 	is_dashing_animating = true
 
 	mortis_animation.play("Dash")
+	$SFX.stream = load("res://resource/Sounds/sfx/teleport.wav")
+	$SFX.play()
 	print("Playing Dash animation")  # Debugging
 
 	is_dashing_animating = false
@@ -191,6 +195,8 @@ func launch_fireball() -> void:
 	get_parent().add_child(fireball)
 	$FireTimer.start()
 	can_shoot = false
+	$SFX.stream = load("res://resource/Sounds/sfx/poisonball.wav")
+	$SFX.play()
 	emit_signal("fireball_bar")
 	
 	

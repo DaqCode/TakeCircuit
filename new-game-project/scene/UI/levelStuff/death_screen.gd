@@ -12,7 +12,7 @@ func call_animation() -> void:
 	$AnimationPlayer.play("appear")
 
 func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scene/UI/main_menu.tscn")
 
 func _on_retry_pressed() -> void:
 	set_process_input(true)

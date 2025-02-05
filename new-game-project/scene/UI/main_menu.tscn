@@ -1,4 +1,655 @@
-[gd_scene format=3 uid="uid://coeo1we2ngyl2"]
+[gd_scene load_steps=34 format=3 uid="uid://coeo1we2ngyl2"]
+
+[ext_resource type="Script" path="res://scene/UI/main_menu.gd" id="1_iv6yc"]
+[ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="1_umx67"]
+[ext_resource type="Texture2D" uid="uid://dbqeqha81dwuj" path="res://resource/art/tileset/Trees.png" id="2_solam"]
+[ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="3_m3p02"]
+[ext_resource type="Texture2D" uid="uid://bqo4xq2m1hvaq" path="res://resource/art/characters/mortis/idle/MortisIdle0001.png" id="4_hgnhu"]
+[ext_resource type="Texture2D" uid="uid://c8bljfw50jhl8" path="res://resource/art/characters/mortis/idle/MortisIdle0002.png" id="5_rt0bo"]
+[ext_resource type="Texture2D" uid="uid://dq2l78s0umkc0" path="res://resource/art/characters/mortis/idle/MortisIdle0003.png" id="6_ufrx4"]
+[ext_resource type="Texture2D" uid="uid://bi1hdebpeorfe" path="res://resource/art/characters/mortis/idle/MortisIdle0004.png" id="7_fe6cd"]
+[ext_resource type="Texture2D" uid="uid://c07ydjcjs6lfs" path="res://resource/art/characters/mortis/idle/MortisIdle0005.png" id="8_lbqd5"]
+[ext_resource type="Texture2D" uid="uid://b1ne61ww47q0t" path="res://resource/art/characters/mortis/idle/MortisIdle0006.png" id="9_s0ik6"]
+[ext_resource type="Texture2D" uid="uid://bp1st7fgwfjlc" path="res://resource/art/characters/mortis/run/MortisRun0000.png" id="10_o675y"]
+[ext_resource type="Texture2D" uid="uid://bdcoiwlvbhtgs" path="res://resource/art/characters/mortis/run/MortisRun0001.png" id="11_ylbmt"]
+[ext_resource type="Texture2D" uid="uid://cmghajvclqdh1" path="res://resource/art/characters/mortis/run/MortisRun0002.png" id="12_86y4y"]
+[ext_resource type="Texture2D" uid="uid://dyngfw0ykvrr1" path="res://resource/art/characters/mortis/run/MortisRun0003.png" id="13_c8x58"]
+[ext_resource type="Theme" uid="uid://cv04lef3oqxtw" path="res://resource/themes/UIThemes/UiThemes.tres" id="14_aoy1e"]
+[ext_resource type="FontFile" uid="uid://b43kwvpw4gy2s" path="res://resource/art/fonts/Montserrat-Bold.ttf" id="15_ksjhr"]
+[ext_resource type="Theme" uid="uid://dmgwgxwj8hfe1" path="res://resource/themes/mainMenuAreas.tres" id="15_q2o26"]
+[ext_resource type="AudioStream" uid="uid://dlcw233jxqqys" path="res://resource/Sounds/music/just-relax-11157.mp3" id="18_owqei"]
+[ext_resource type="AudioStream" uid="uid://dte5xgx5oiw31" path="res://resource/Sounds/sfx/someSound.wav" id="19_mm0v4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgccs"]
+texture = ExtResource("2_solam")
+19:0/0 = 0
+20:0/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+25:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+2:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n4wqn"]
+sources/0 = SubResource("TileSetAtlasSource_xgccs")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bbfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m3p02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hgnhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rt0bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ufrx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fe6cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lbqd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s0ik6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_o675y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ylbmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_86y4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c8x58")
+}],
+"loop": true,
+"name": &"running boy",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4upyg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8jd3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.301961, 0.65098, 1, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.760784, 0.760784, 0.819608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+shadow_color = Color(1, 1, 0.921569, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dd64e"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.419608, 0.592157, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+shadow_color = Color(1, 1, 0.921569, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8cpr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2ig5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdqc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.239216, 0.431373, 0.439216, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.258824, 0.141176, 0.270588, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+shadow_color = Color(0.560784, 0.870588, 0.364706, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_072bx"]
+Button/colors/font_color = Color(1, 1, 0.921569, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.258824, 0.141176, 0.270588, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 8
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("15_ksjhr")
+Button/styles/disabled = SubResource("StyleBoxFlat_4upyg")
+Button/styles/hover = SubResource("StyleBoxFlat_h8jd3")
+Button/styles/normal = SubResource("StyleBoxFlat_dd64e")
+Button/styles/pressed = SubResource("StyleBoxFlat_e8cpr")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("15_ksjhr")
+Label/styles/normal = SubResource("StyleBoxEmpty_s2ig5")
+Panel/styles/panel = SubResource("StyleBoxFlat_mfdqc")
+
+[sub_resource type="Animation" id="Animation_lja02"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1081, -2023)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap5:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1091, -2109)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMap:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-853, -1324)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMap3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-770, -2101)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mort:sprite_frames")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_6bbfl")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mort:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"running boy"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mort:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-168, 538)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mort:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(90, -179)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(90, 735)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Mort:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_olngx"]
+resource_name = "hebounce"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mort:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.466667, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_gixch"]
+resource_name = "show_place"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1081, -2584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap5:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1091, -2109), Vector2(-1036, -2694)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TileMap:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.53333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-853, -1324), Vector2(-853, -1324), Vector2(-866, -1938)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TileMap3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-770, -2101), Vector2(-770, -2101), Vector2(-770, -2641)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mort:sprite_frames")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_6bbfl"), SubResource("SpriteFrames_6bbfl")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mort:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"running boy", &"idle"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mort:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.93333, 4, 4.5, 4.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-168, 538), Vector2(1220, 538), Vector2(1220, 538), Vector2(575, 538)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mort:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.73333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(90, -179), Vector2(90, 20)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.96667, 3.56667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(90, 735), Vector2(90, 735), Vector2(90, 264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fk17"]
+_data = {
+"RESET": SubResource("Animation_lja02"),
+"hebounce": SubResource("Animation_olngx"),
+"show_place": SubResource("Animation_gixch")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +658,165 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iv6yc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_umx67")
+
+[node name="TileMap4" type="TileMap" parent="."]
+position = Vector2(-1081, -2023)
+scale = Vector2(4.93, 4.93)
+tile_set = SubResource("TileSet_n4wqn")
+format = 2
+layer_0/tile_data = PackedInt32Array(1114096, 851970, 1, 1179632, 851970, 2, 1245168, 851970, 3, 1310704, 851970, 4, 1114097, 917506, 1, 1179633, 917506, 2, 1245169, 917506, 3, 1310705, 917506, 4, 1048562, 983042, 0, 1114098, 983042, 1, 1179634, 983042, 2, 1245170, 983042, 3, 1310706, 983042, 4, 1376242, 983042, 5, 1048563, 1048578, 0, 1114099, 1048578, 1, 1179635, 1048578, 2, 1245171, 655361, 0, 1310707, 655361, 1, 1376243, 655361, 2, 1441779, 655361, 3, 1507315, 655361, 4, 1572851, 655361, 5, 1638387, 655361, 6, 1703923, 655361, 7, 1769459, 655361, 8, 1834995, 655361, 2, 1900531, 655361, 3, 1966067, 655361, 4, 2031603, 655361, 5, 2097139, 655361, 6, 2162675, 655361, 7, 2228211, 655361, 8, 2293747, 655361, 2, 2359283, 655361, 3, 1048564, 1114114, 0, 1114100, 1114114, 1, 1179636, 1114114, 2, 1245172, 720897, 0, 1310708, 720897, 1, 1376244, 720897, 2, 1441780, 720897, 3, 1507316, 720897, 4, 1572852, 720897, 5, 1638388, 720897, 6, 1703924, 720897, 7, 1769460, 720897, 8, 1834996, 720897, 2, 1900532, 720897, 3, 1966068, 720897, 4, 2031604, 720897, 5, 2097140, 720897, 6, 2162676, 720897, 7, 2228212, 720897, 8, 2293748, 720897, 2, 2359284, 720897, 3, 1048565, 1179650, 0, 1114101, 1179650, 1, 1179637, 1179650, 2, 1245173, 1179650, 3, 1310709, 1179650, 4, 1376245, 1179650, 5, 1114102, 1245186, 1, 1179638, 1245186, 2, 1245174, 1245186, 3, 1310710, 1245186, 4, 1114103, 1310722, 1, 1179639, 1310722, 2, 1245175, 1310722, 3, 1310711, 1310722, 4, 2621471, 917504, 9, 2621453, 983040, 9, 2621454, 1114112, 9, 2621455, 1114112, 9, 2621456, 983040, 9, 2621457, 1114112, 9, 2621458, 917504, 9, 2621459, 983040, 9, 2621460, 917504, 9, 2621461, 1114112, 9, 2621465, 983040, 9, 2621466, 917504, 9, 2621467, 917504, 9, 2621468, 1114112, 9, 2621469, 983040, 9, 2621470, 983040, 9, 2621462, 917504, 9, 2621463, 917504, 9, 2621464, 917504, 9)
+
+[node name="TileMap5" type="TileMap" parent="."]
+position = Vector2(-1091, -2109)
+scale = Vector2(4.93, 4.93)
+tile_set = SubResource("TileSet_n4wqn")
+format = 2
+layer_0/tile_data = PackedInt32Array(1114096, 851970, 1, 1179632, 851970, 2, 1245168, 851970, 3, 1310704, 851970, 4, 1114097, 917506, 1, 1179633, 917506, 2, 1245169, 917506, 3, 1310705, 917506, 4, 1048562, 983042, 0, 1114098, 983042, 1, 1179634, 983042, 2, 1245170, 983042, 3, 1310706, 983042, 4, 1376242, 983042, 5, 1048563, 1048578, 0, 1114099, 1048578, 1, 1179635, 1048578, 2, 1245171, 655361, 0, 1310707, 655361, 1, 1376243, 655361, 2, 1441779, 655361, 3, 1507315, 655361, 4, 1572851, 655361, 5, 1638387, 655361, 6, 1703923, 655361, 7, 1769459, 655361, 8, 1834995, 655361, 2, 1900531, 655361, 3, 1966067, 655361, 4, 2031603, 655361, 5, 2097139, 655361, 6, 2162675, 655361, 7, 2228211, 655361, 8, 2293747, 655361, 2, 2359283, 655361, 3, 1048564, 1114114, 0, 1114100, 1114114, 1, 1179636, 1114114, 2, 1245172, 720897, 0, 1310708, 720897, 1, 1376244, 720897, 2, 1441780, 720897, 3, 1507316, 720897, 4, 1572852, 720897, 5, 1638388, 720897, 6, 1703924, 720897, 7, 1769460, 720897, 8, 1834996, 720897, 2, 1900532, 720897, 3, 1966068, 720897, 4, 2031604, 720897, 5, 2097140, 720897, 6, 2162676, 720897, 7, 2228212, 720897, 8, 2293748, 720897, 2, 2359284, 720897, 3, 1048565, 1179650, 0, 1114101, 1179650, 1, 1179637, 1179650, 2, 1245173, 1179650, 3, 1310709, 1179650, 4, 1376245, 1179650, 5, 1114102, 1245186, 1, 1179638, 1245186, 2, 1245174, 1245186, 3, 1310710, 1245186, 4, 1114103, 1310722, 1, 1179639, 1310722, 2, 1245175, 1310722, 3, 1310711, 1310722, 4, 2621454, 458752, 6, 2621455, 524288, 6, 2621456, 589824, 6, 2621457, 655360, 6, 2621460, 458752, 6, 2621461, 524288, 6, 2621465, 458752, 6, 2621466, 524288, 6, 2621467, 589824, 6, 2621468, 655360, 6, 2621462, 589824, 6, 2621463, 655360, 6, 2359309, 393216, 2, 2424845, 393216, 3, 2490381, 393216, 4, 2555917, 393216, 5, 2293774, 458752, 1, 2359310, 458752, 2, 2424846, 458752, 3, 2490382, 458752, 4, 2555918, 458752, 5, 2686990, 458752, 7, 2293775, 524288, 1, 2359311, 524288, 2, 2424847, 524288, 3, 2490383, 524288, 4, 2555919, 524288, 5, 2686991, 524288, 7, 2293776, 589824, 1, 2359312, 589824, 2, 2424848, 589824, 3, 2490384, 589824, 4, 2555920, 589824, 5, 2359313, 655360, 2, 2424849, 655360, 3, 2490385, 655360, 4, 2555921, 655360, 5, 2424850, 720896, 3, 2490386, 720896, 4, 2555922, 720896, 5, 2359315, 393216, 2, 2424851, 393216, 3, 2490387, 393216, 4, 2555923, 393216, 5, 2293780, 458752, 1, 2359316, 458752, 2, 2424852, 458752, 3, 2490388, 458752, 4, 2555924, 458752, 5, 2686996, 458752, 7, 2293781, 524288, 1, 2359317, 524288, 2, 2424853, 524288, 3, 2490389, 524288, 4, 2555925, 524288, 5, 2686997, 524288, 7, 2293782, 589824, 1, 2359318, 589824, 2, 2424854, 589824, 3, 2490390, 589824, 4, 2555926, 589824, 5, 2359319, 655360, 2, 2424855, 655360, 3, 2490391, 655360, 4, 2555927, 655360, 5, 2424856, 393216, 3, 2490392, 393216, 4, 2555928, 393216, 5, 2359320, 393216, 2, 2293785, 458752, 1, 2359321, 458752, 2, 2424857, 458752, 3, 2490393, 458752, 4, 2555929, 458752, 5, 2687001, 458752, 7, 2293786, 524288, 1, 2359322, 524288, 2, 2424858, 524288, 3, 2490394, 524288, 4, 2555930, 524288, 5, 2687002, 524288, 7, 2293787, 589824, 1, 2359323, 589824, 2, 2424859, 589824, 3, 2490395, 589824, 4, 2555931, 589824, 5, 2359324, 655360, 2, 2424860, 655360, 3, 2490396, 655360, 4, 2555932, 655360, 5, 2424861, 720896, 3, 2490397, 720896, 4, 2555933, 720896, 5)
+
+[node name="Mort" type="AnimatedSprite2D" parent="."]
+position = Vector2(-168, 538)
+scale = Vector2(4.1, 4.1)
+sprite_frames = SubResource("SpriteFrames_6bbfl")
+animation = &"running boy"
+autoplay = "running boy"
+flip_h = true
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-853, -1324)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_n4wqn")
+format = 2
+layer_0/tile_data = PackedInt32Array(2293774, 786432, 2, 2359310, 786432, 3, 2424846, 786432, 4, 2490382, 786432, 5, 2228239, 851968, 1, 2293775, 851968, 2, 2359311, 851968, 3, 2424847, 851968, 4, 2490383, 851968, 5, 2555919, 851968, 6, 2228240, 917504, 1, 2293776, 917504, 2, 2359312, 917504, 3, 2424848, 917504, 4, 2490384, 917504, 5, 2555920, 917504, 6, 2228241, 983040, 1, 2293777, 983040, 2, 2359313, 983040, 3, 2424849, 983040, 4, 2490385, 983040, 5, 2555921, 983040, 6, 2293778, 1048576, 2, 2359314, 1048576, 3, 2424850, 1048576, 4, 2490386, 1048576, 5, 2555922, 655360, 6, 2228243, 786432, 2, 2293779, 786432, 3, 2359315, 786432, 4, 2424851, 786432, 5, 2162708, 851968, 1, 2228244, 851968, 2, 2293780, 851968, 3, 2359316, 851968, 4, 2424852, 851968, 5, 2490388, 851968, 6, 2555924, 851968, 7, 2162709, 917504, 1, 2228245, 917504, 2, 2293781, 917504, 3, 2359317, 917504, 4, 2424853, 917504, 5, 2490389, 917504, 6, 2555925, 917504, 7, 2162710, 983040, 1, 2228246, 983040, 2, 2293782, 983040, 3, 2359318, 983040, 4, 2424854, 983040, 5, 2490390, 983040, 6, 2228247, 1048576, 2, 2293783, 1048576, 3, 2359319, 1048576, 4, 2424855, 1048576, 5, 2228249, 786432, 2, 2293785, 786432, 3, 2359321, 786432, 4, 2424857, 786432, 5, 2162714, 851968, 1, 2228250, 851968, 2, 2293786, 851968, 3, 2359322, 851968, 4, 2424858, 851968, 5, 2490394, 851968, 6, 2555930, 851968, 7, 2162715, 917504, 1, 2228251, 917504, 2, 2293787, 917504, 3, 2359323, 917504, 4, 2424859, 917504, 5, 2490395, 917504, 6, 2555931, 917504, 7, 2162716, 983040, 1, 2228252, 983040, 2, 2293788, 983040, 3, 2359324, 983040, 4, 2424860, 983040, 5, 2490396, 983040, 6, 2228253, 1048576, 2, 2293789, 1048576, 3, 2359325, 1048576, 4, 2424861, 1048576, 5, 2228255, 786432, 2, 2293791, 786432, 3, 2359327, 786432, 4, 2424863, 786432, 5, 2162720, 851968, 1, 2228256, 851968, 2, 2293792, 851968, 3, 2359328, 851968, 4, 2424864, 851968, 5, 2490400, 851968, 6, 2555936, 851968, 7, 2162721, 917504, 1, 2228257, 917504, 2, 2293793, 917504, 3, 2359329, 917504, 4, 2424865, 917504, 5, 2490401, 917504, 6, 2555937, 917504, 7, 2162722, 983040, 1, 2228258, 983040, 2, 2293794, 983040, 3, 2359330, 983040, 4, 2424866, 983040, 5, 2490402, 983040, 6, 2228259, 1048576, 2, 2293795, 1048576, 3, 2359331, 1048576, 4, 2424867, 1048576, 5, 2621455, 851968, 7, 2621456, 917504, 7, 1114096, 851970, 1, 1179632, 851970, 2, 1245168, 851970, 3, 1310704, 851970, 4, 1114097, 917506, 1, 1179633, 917506, 2, 1245169, 917506, 3, 1310705, 917506, 4, 1048562, 983042, 0, 1114098, 983042, 1, 1179634, 983042, 2, 1245170, 983042, 3, 1310706, 983042, 4, 1376242, 983042, 5, 1048563, 1048578, 0, 1114099, 1048578, 1, 1179635, 1048578, 2, 1245171, 655361, 0, 1310707, 655361, 1, 1376243, 655361, 2, 1441779, 655361, 3, 1507315, 655361, 4, 1572851, 655361, 5, 1638387, 655361, 6, 1703923, 655361, 7, 1769459, 655361, 8, 1834995, 655361, 2, 1900531, 655361, 3, 1966067, 655361, 4, 2031603, 655361, 5, 2097139, 655361, 6, 2162675, 655361, 7, 2228211, 655361, 8, 2293747, 655361, 2, 2359283, 655361, 3, 1048564, 1114114, 0, 1114100, 1114114, 1, 1179636, 1114114, 2, 1245172, 720897, 0, 1310708, 720897, 1, 1376244, 720897, 2, 1441780, 720897, 3, 1507316, 720897, 4, 1572852, 720897, 5, 1638388, 720897, 6, 1703924, 720897, 7, 1769460, 720897, 8, 1834996, 720897, 2, 1900532, 720897, 3, 1966068, 720897, 4, 2031604, 720897, 5, 2097140, 720897, 6, 2162676, 720897, 7, 2228212, 720897, 8, 2293748, 720897, 2, 2359284, 720897, 3, 1048565, 1179650, 0, 1114101, 1179650, 1, 1179637, 1179650, 2, 1245173, 1179650, 3, 1310709, 1179650, 4, 1376245, 1179650, 5, 1114102, 1245186, 1, 1179638, 1245186, 2, 1245174, 1245186, 3, 1310710, 1245186, 4, 1114103, 1310722, 1, 1179639, 1310722, 2, 1245175, 1310722, 3, 1310711, 1310722, 4)
+
+[node name="TileMap3" type="TileMap" parent="."]
+position = Vector2(-770, -2101)
+scale = Vector2(4.93, 4.93)
+tile_set = SubResource("TileSet_n4wqn")
+format = 2
+layer_0/tile_data = PackedInt32Array(1114096, 851970, 1, 1179632, 851970, 2, 1245168, 851970, 3, 1310704, 851970, 4, 1114097, 917506, 1, 1179633, 917506, 2, 1245169, 917506, 3, 1310705, 917506, 4, 1048562, 983042, 0, 1114098, 983042, 1, 1179634, 983042, 2, 1245170, 983042, 3, 1310706, 983042, 4, 1376242, 983042, 5, 1048563, 1048578, 0, 1114099, 1048578, 1, 1179635, 1048578, 2, 1245171, 655361, 0, 1310707, 655361, 1, 1376243, 655361, 2, 1441779, 655361, 3, 1507315, 655361, 4, 1572851, 655361, 5, 1638387, 655361, 6, 1703923, 655361, 7, 1769459, 655361, 8, 1834995, 655361, 2, 1900531, 655361, 3, 1966067, 655361, 4, 2031603, 655361, 5, 2097139, 655361, 6, 2162675, 655361, 7, 2228211, 655361, 8, 2293747, 655361, 2, 2359283, 655361, 3, 1048564, 1114114, 0, 1114100, 1114114, 1, 1179636, 1114114, 2, 1245172, 720897, 0, 1310708, 720897, 1, 1376244, 720897, 2, 1441780, 720897, 3, 1507316, 720897, 4, 1572852, 720897, 5, 1638388, 720897, 6, 1703924, 720897, 7, 1769460, 720897, 8, 1834996, 720897, 2, 1900532, 720897, 3, 1966068, 720897, 4, 2031604, 720897, 5, 2097140, 720897, 6, 2162676, 720897, 7, 2228212, 720897, 8, 2293748, 720897, 2, 2359284, 720897, 3, 1048565, 1179650, 0, 1114101, 1179650, 1, 1179637, 1179650, 2, 1245173, 1179650, 3, 1310709, 1179650, 4, 1376245, 1179650, 5, 1114102, 1245186, 1, 1179638, 1245186, 2, 1245174, 1245186, 3, 1310710, 1245186, 4, 1114103, 1310722, 1, 1179639, 1310722, 2, 1245175, 1310722, 3, 1310711, 1310722, 4, 2555916, 0, 11, 2490381, 65536, 10, 2555917, 65536, 11, 2621453, 65536, 12, 2490382, 131072, 10, 2555918, 131072, 11, 2621454, 131072, 12, 2686990, 131072, 13, 2555919, 196608, 11, 2621455, 196608, 12, 2555921, 0, 11, 2490386, 65536, 10, 2555922, 65536, 11, 2621458, 65536, 12, 2490387, 131072, 10, 2555923, 131072, 11, 2621459, 131072, 12, 2686995, 131072, 13, 2555924, 196608, 11, 2621460, 196608, 12, 2555931, 0, 11, 2490396, 65536, 10, 2555932, 65536, 11, 2621468, 65536, 12, 2490397, 131072, 10, 2555933, 131072, 11, 2621469, 131072, 12, 2687005, 131072, 13, 2555934, 196608, 11, 2621470, 196608, 12, 2555926, 0, 11, 2490391, 65536, 10, 2555927, 65536, 11, 2621463, 65536, 12, 2490392, 131072, 10, 2555928, 131072, 11, 2621464, 131072, 12, 2687000, 131072, 13, 2555929, 196608, 11, 2621465, 196608, 12)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = -179.0
+offset_right = 1059.0
+offset_bottom = -25.0
+theme = ExtResource("14_aoy1e")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -65.0
+offset_right = 217.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.560784, 0.870588, 0.364706, 1)
+theme_override_colors/font_shadow_color = Color(0.811765, 1, 0.439216, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0.921569, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "Take Poison"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = 27.0
+offset_right = 183.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.560784, 0.870588, 0.364706, 1)
+theme_override_colors/font_shadow_color = Color(0.811765, 1, 0.439216, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0.921569, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 23
+text = "(No, not like, actually. It's just a game name)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 735.0
+offset_right = 1059.0
+offset_bottom = 889.0
+theme = ExtResource("14_aoy1e")
+
+[node name="GridContainer" type="GridContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -46.5
+offset_right = 449.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 50
+columns = 2
+
+[node name="Play" type="Button" parent="Panel2/GridContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("15_q2o26")
+text = "Play!"
+
+[node name="Levels" type="Button" parent="Panel2/GridContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_072bx")
+text = "Levels!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fk17")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_owqei")
+volume_db = -20.0
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_mm0v4")
+volume_db = -13.0
+
+[connection signal="mouse_entered" from="Panel2/GridContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="Panel2/GridContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Panel2/GridContainer/Levels" to="." method="_on_levels_mouse_entered"]
+[connection signal="pressed" from="Panel2/GridContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

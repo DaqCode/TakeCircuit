@@ -1966,6 +1966,12 @@ shape = SubResource("RectangleShape2D_nc3o6")
 
 [node name="Mortis" parent="." instance=ExtResource("7_rwm7w")]
 position = Vector2(48, 590)
+fireball_offset = Vector2(20, 0)
+speed = 200.0
+jump_speed = -400.0
+dash_speed = 500.0
+gravity = 800.0
+coyote_time_max = 0.1
 
 [node name="All the text" type="Control" parent="."]
 layout_mode = 3
