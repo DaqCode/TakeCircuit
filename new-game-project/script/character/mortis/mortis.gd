@@ -12,7 +12,7 @@ signal fireball_bar
 @export var jump_speed: float = -400.0
 @export var dash_speed: float = 500.0
 @export var gravity: float = 800.0
-@export var coyote_time_max: float = 0.2  # Grace period for coyote jump in seconds
+@export var coyote_time_max: float = 0.1  # Grace period for coyote jump in seconds
 
 var can_dash: bool = true
 var is_dashing: bool = false
@@ -66,6 +66,7 @@ func _physics_process(delta: float) -> void:
 
 	# Fireball attack
 	if Input.is_action_just_pressed("fire") and can_shoot:
+		mortis_animation.play("PoisonBall")
 		emit_signal("fireball_launched")  # Emit the fireball_launched signal
 		Global.apply_poison_damage(7)
 		launch_fireball()
@@ -169,13 +170,11 @@ func dash() -> void:
 
 	# Start
 
-
 func launch_fireball() -> void:
 	var fireball = fireball_scene.instantiate()
 	
 	var spawn_position = global_position
 	mortis_animation.play("PoisonBall")
-	mortis_animation.play("Idle")
 	if mortis_animation.flip_h:
 		spawn_position -= Vector2(fireball_offset.x, fireball_offset.y)
 	else:
@@ -194,7 +193,6 @@ func launch_fireball() -> void:
 	can_shoot = false
 	emit_signal("fireball_bar")
 	
-	# mortis_animation.play("CastFireball")
 	
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
@@ -218,6 +216,8 @@ func _on_dash_animation_finished() -> void:
 	if mortis_animation.animation == "Dash":
 		is_dashing_animating = false
 		mortis_animation.play("Idle") 
+	elif mortis_animation.animation == "PoisonBall":
+		mortis_animation.play("Idle")
 
 
 func _on_dash_bar_updated() -> void:
@@ -231,5 +231,5 @@ func when_die() -> void:
 	await is_on_floor()
 	mortis_animation.play("Death")
 	await get_tree().create_timer(2.0).timeout
-	set_process_input(true)  # Re-enable input after death
-	get_tree().reload_current_scene()
+	emit_signal("show_death_screen")
+	

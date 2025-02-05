@@ -1,7 +1,266 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvkvvusjl46h7"]
+[gd_scene load_steps=19 format=3 uid="uid://drt8mdpls2jqv"]
 
 [ext_resource type="Script" path="res://scene/UI/intro_scene.gd" id="1_bh0yq"]
 [ext_resource type="VideoStream" path="res://resource/Sounds/animations/GameIntros1.ogv" id="1_up8pk"]
+[ext_resource type="Texture2D" uid="uid://dtu7knau3s1hv" path="res://resource/Sounds/animations/Framse/introAnimation0000.png" id="3_30gbw"]
+[ext_resource type="AudioStream" uid="uid://d0mixxath1k00" path="res://resource/Sounds/animations/mortisIntro.mp3" id="3_32n6d"]
+[ext_resource type="FontFile" uid="uid://b43kwvpw4gy2s" path="res://resource/art/fonts/Montserrat-Bold.ttf" id="4_aifhk"]
+[ext_resource type="Texture2D" uid="uid://vjnuhwoc7uk0" path="res://resource/Sounds/animations/Framse/introAnimation0001.png" id="5_klt2l"]
+[ext_resource type="Texture2D" uid="uid://d22vhh63mi5g0" path="res://resource/Sounds/animations/Framse/introAnimation0002.png" id="6_fukwk"]
+[ext_resource type="Texture2D" uid="uid://drhvse4awamm8" path="res://resource/Sounds/animations/Framse/introAnimation0017.png" id="11_mrd3r"]
+[ext_resource type="Texture2D" uid="uid://cfyooqgqybx7b" path="res://resource/Sounds/animations/Framse/introAnimation0018.png" id="12_2rou1"]
+[ext_resource type="Texture2D" uid="uid://g6g3gcihgllc" path="res://resource/Sounds/animations/Framse/introAnimation0019.png" id="13_4i442"]
+[ext_resource type="Texture2D" uid="uid://nnm3dyoue3qy" path="res://resource/art/tileset/pain.png" id="13_h3hfw"]
+[ext_resource type="Texture2D" uid="uid://c8rgchne2vsll" path="res://resource/Sounds/animations/Framse/introAnimation0020.png" id="14_rdrhh"]
+[ext_resource type="Texture2D" uid="uid://c0hflf3lsdco7" path="res://resource/art/tileset/map.png" id="14_rydek"]
+[ext_resource type="Texture2D" uid="uid://bh8lwwdcyj3eq" path="res://resource/art/tileset/him.png" id="15_gieva"]
+[ext_resource type="Texture2D" uid="uid://dliayuveo6uvq" path="res://resource/Sounds/animations/shot.png" id="16_utjor"]
+
+[sub_resource type="Animation" id="Animation_ba3or"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_30gbw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["My name is Mort, short for Mortiz. And I have a story to tell for you.
+"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -516)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.105, 3.105)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_32n6d")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l4wlo"]
+resource_name = "animationForIntro"
+length = 46.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 0.666667, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 6.2, 12.9, 31, 41),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_30gbw"), ExtResource("5_klt2l"), ExtResource("6_fukwk"), ExtResource("12_2rou1"), ExtResource("13_4i442"), ExtResource("14_rdrhh"), ExtResource("13_4i442"), ExtResource("12_2rou1"), ExtResource("11_mrd3r"), ExtResource("16_utjor"), ExtResource("13_h3hfw"), ExtResource("14_rydek"), ExtResource("15_gieva")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.07, 5.93333, 6.2, 7.1, 10.8333, 11, 12.9106, 13.0333, 17.7667, 17.9333, 31, 31.5, 37.94, 38.0452, 38.0467, 40.95, 41.9333, 45.0366, 46.0085),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.99558, 0.99558, 0.99558, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667, 6.2, 6.23333, 7.03333, 7.1, 11.1749, 11.2333, 13.0333, 13.1333, 17.1333, 17.2333, 17.7667, 18.1667, 23.9333, 23.9667, 24.2333, 28.1333, 28.1667, 30.9667, 31.2, 38.0933, 41, 41.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "My name is Mort, short for Mortiz. And I have a story to tell for you.
+", "My name is Mort, short for Mortiz. And I have a story to tell for you.
+", "", "", "Years ago, I was pierced with what the people called the cure.", "Years ago, I was pierced with what the people called the cure.", "", "", "It brought evil intentions to me after they realized it didn’t work
+", "It brought evil intentions to me after they realized it didn’t work
+", "", "", "The poison has melted me and created a new being inside the shell of a rotting corpse.
+", "The poison has melted me and created a new being inside the shell of a rotting corpse.
+", "", "Until I heard a word about another cure being found.
+", "Until I heard a word about another cure being found.
+", "
+", "
+", "They said that it would be found in the deepest of caves and castles,  but the area is still left unknown.
+
+", "They said that it would be found in the deepest of caves and castles,  but the area is still left unknown.
+
+", "
+", "I must find the place. I must regain my sense of humanity.
+"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6.16667, 6.23333, 11.2, 13.1333, 14.3, 15.3, 16.4333, 17.1333, 30.9667, 36.9667, 38.0667, 41.0333, 42.8333, 43),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-9, -368), Vector2(-9, -368), Vector2(-9, -516), Vector2(-9, -1), Vector2(-27, -380), Vector2(-488, -101), Vector2(-290, -246), Vector2(-4.00006, -492), Vector2(-14, -20), Vector2(-14, -20), Vector2(-14, -456), Vector2(-14, -164), Vector2(-1663, -1503.55), Vector2(-1663, -1503.55), Vector2(-260, -352)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12.8667, 13.1333, 17.1333, 36.9667, 38.0667, 41, 41.0333, 42.8333, 43),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(1.8, 1.8), Vector2(3.105, 3.105), Vector2(1.8, 1.8), Vector2(1.8, 1.8), Vector2(1.785, 1.785), Vector2(1.785, 1.785), Vector2(7.025, 7.025), Vector2(7.025, 7.025), Vector2(2.62, 2.62)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TextureRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_32n6d")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7unum"]
+_data = {
+"RESET": SubResource("Animation_ba3or"),
+"animationForIntro": SubResource("Animation_l4wlo")
+}
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -12,6 +271,57 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bh0yq")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -516.0
+offset_right = -513.0
+offset_bottom = -516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.105, 3.105)
+texture = ExtResource("3_30gbw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -441.0
+offset_top = -148.0
+offset_right = 441.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.894118, 0.470588, 1)
+theme_override_colors/font_outline_color = Color(0.45098, 0.152941, 0.360784, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_aifhk")
+theme_override_font_sizes/font_size = 32
+text = "My name is Mort, short for Mortiz. And I have a story to tell for you.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 1920.0
@@ -20,4 +330,14 @@ scale = Vector2(0.6, 0.6)
 stream = ExtResource("1_up8pk")
 autoplay = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_32n6d")
+volume_db = -6.0
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7unum")
+}
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_player_animation_finished"]
