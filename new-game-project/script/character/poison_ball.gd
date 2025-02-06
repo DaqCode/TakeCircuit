@@ -3,7 +3,7 @@ extends Area2D
 
 @export var speed: float = 400.0
 @export var damage: int = 25
-@export var lifetime: float = 1.0  # seconds
+@export var lifetime: float = 0.5  # seconds
 
 var direction: Vector2 = Vector2.ZERO
 
@@ -17,13 +17,10 @@ func _physics_process(delta: float) -> void:
 	# Move the fireball along its set direction.
 	position += direction * speed * delta
 
-func _on_body_entered(body: Node) -> void:
-	# If the fireball hits an enemy, apply damage.
-	if body.is_in_group("enemies"):
-		# Assuming enemy has a 'take_damage()' method.
-		body.take_damage(damage)
-		queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free()
 	
+
+func _on_area_entered(area:Area2D) -> void:
+	queue_free()

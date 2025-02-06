@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cilungqen1wwe"]
+[gd_scene load_steps=21 format=3 uid="uid://cilungqen1wwe"]
 
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_tcxts"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_4genq"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://duta6nhxw46f5" path="res://scene/items/PoisonVial/poison_vial.tscn" id="5_u61yh"]
 [ext_resource type="Theme" uid="uid://21y7kl26e5v0" path="res://resource/themes/text.tres" id="9_apil7"]
 [ext_resource type="PackedScene" uid="uid://mwbd4ui5a60o" path="res://scene/UI/levelStuff/death_screen.tscn" id="10_slpfx"]
+[ext_resource type="PackedScene" uid="uid://d1yhx8ro48hjn" path="res://scene/theseHurtYK/win_screen.tscn" id="11_awgos"]
+[ext_resource type="PackedScene" uid="uid://b4gdk04y8b0nx" path="res://scene/theseHurtYK/ending_goal.tscn" id="12_f44oh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgt0j"]
 texture = ExtResource("2_r7my8")
@@ -1968,7 +1970,7 @@ position = Vector2(671, 336)
 position = Vector2(727, 133)
 
 [node name="Mortis" parent="." instance=ExtResource("3_ksrci")]
-position = Vector2(48, 590)
+position = Vector2(928, 85)
 
 [node name="All the text" type="Control" parent="."]
 layout_mode = 3
@@ -2021,7 +2023,7 @@ offset_right = 1116.0
 offset_bottom = 232.0
 theme = ExtResource("9_apil7")
 text = "A dash will stagger you. Use it wisely.
-Right click or use \"L\""
+Left click or use \"L\""
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -2044,5 +2046,21 @@ offset_left = 576.0
 offset_top = 325.0
 offset_right = 576.0
 offset_bottom = 325.0
+
+[node name="WinScreen" parent="." instance=ExtResource("11_awgos")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 576.0
+offset_top = 325.0
+offset_right = 576.0
+offset_bottom = 325.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="EndingGoal" parent="." instance=ExtResource("12_f44oh")]
+position = Vector2(1126, 38)
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

@@ -17,6 +17,7 @@ signal fireball_bar
 var can_dash: bool = true
 var is_dashing: bool = false
 var is_dashing_animating: bool = false
+var is_dead: bool = false
 
 
 var dash_direction: int = 1
@@ -60,7 +61,12 @@ func update_fireball_bar() -> void:
 func _physics_process(delta: float) -> void:
 	var input_direction: Vector2 = Vector2.ZERO
 
-	# If dashing, lock vertical movement (as an example)
+	if is_dead:
+		# Optionally, set velocity to zero to stop any movement.
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return  
+
 	if is_dashing:
 		velocity.y = 0
 
@@ -154,6 +160,20 @@ func _physics_process(delta: float) -> void:
 		is_dashing = false
 		$DashTimer.start()
 
+	    # --- Moving Platform Handling (Detect TileMap Velocity) ---
+	var platform_velocity = Vector2.ZERO
+	if is_on_floor():
+		for i in range(get_slide_collision_count()):
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+
+			if collider is TileMap and collider.has_method("get_platform_velocity"):
+				platform_velocity = collider.get_platform_velocity()
+				break  # Only consider the first moving platform encountered
+
+	# Add the platform's velocity to the player's velocity
+		velocity += platform_velocity
+
 	move_and_slide()
 
 func dash() -> void:
@@ -233,9 +253,12 @@ func _on_fireball_bar_updated() -> void:
 	update_fireball_bar()
 
 func when_die() -> void:
-	set_process_input(false)  # Disable input for this script
-	await is_on_floor()
+	is_dead = true  # Set the flag so that movement code stops
 	mortis_animation.play("Death")
-	await get_tree().create_timer(2.0).timeout
-	emit_signal("show_death_screen")
-	
+	await get_tree().create_timer(1.0).timeout
+	Global.emit_signal("show_death_screen")
+
+func ShowSmallDanceIguess() -> void:
+	is_dead = true  # Set the flag so that movement code stops
+	mortis_animation.play("Win")
+	await get_tree().create_timer(1.0).timeout

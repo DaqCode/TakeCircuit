@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=3 uid="uid://bw74ckavir4kd"]
+
+[ext_resource type="Script" path="res://scene/characters/enemy_boy.gd" id="1_exs4j"]
+[ext_resource type="Texture2D" uid="uid://cc73b2ij6lo7w" path="res://resource/art/object/Nyarlm.png" id="1_ppvhf"]
+[ext_resource type="Texture2D" uid="uid://c42cw2eudmw1p" path="res://resource/art/object/firePart.png" id="2_e6ick"]
+
+[sub_resource type="Animation" id="Animation_ygevn"]
+resource_name = "small bob"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.46667, 4.16667, 7, 10.0333, 10.6, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, -20), Vector2(0, 0), Vector2(0, 19), Vector2(0, 19), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dp2n1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fsb56"]
+resource_name = "heDed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.00242808, 0.00398899, 0.00572334, 0.00589677, 0.00693738, 0.00815142, 0.00849829, 0.00971233, 0.0110998, 0.0116201, 0.0126607, 0.0135279, 0.0142216, 0.015956, 0.0168231, 0.0175169, 0.0194247, 0.0204653, 0.0209856, 0.0220262, 0.0234137, 0.0246277, 0.0249746, 0.0268823, 0.0279229, 0.0294839, 0.0320854, 0.0333333, 0.0357614, 0.0362389, 0.0373223, 0.038667, 0.0392301, 0.0402279, 0.0402707, 0.0418316, 0.0419622, 0.0421356, 0.0431763, 0.0443903, 0.0444331, 0.0447372, 0.0459512, 0.0473387, 0.047859, 0.0488996, 0.0497668, 0.0504605, 0.0521948, 0.053062, 0.0537558, 0.0556635, 0.0567041, 0.0572244, 0.0582651, 0.0596525, 0.0608666, 0.0612134, 0.0631212, 0.0641618, 0.0657227, 0.0683243, 0.0695722, 0.0720003, 0.0735612, 0.075469, 0.0765096, 0.0768048, 0.0780705, 0.0792329, 0.080672, 0.0807938, 0.0825281, 0.0827016, 0.0837422, 0.0849562, 0.0853031, 0.0865171, 0.0879046, 0.0884249, 0.0894655, 0.0903327, 0.0910264, 0.0927608, 0.0936279, 0.0943217, 0.0962294, 0.0972701, 0.0977904, 0.098831, 0.100218, 0.101432, 0.101779, 0.103687, 0.104728, 0.106289, 0.10889, 0.110138, 0.112566, 0.114127, 0.116035, 0.116289, 0.117076, 0.118636, 0.118717, 0.120278, 0.121238, 0.122012, 0.122186, 0.123226, 0.12444, 0.124787, 0.126001, 0.127389, 0.127909, 0.12895, 0.129817, 0.130511, 0.132245, 0.133112, 0.133806, 0.135714, 0.136754, 0.137275, 0.138315, 0.139703, 0.140917, 0.141263, 0.143171, 0.144212, 0.145773, 0.14766, 0.148374, 0.149622, 0.150088, 0.151649, 0.15205, 0.153383, 0.153557, 0.153611, 0.154597, 0.155519, 0.155811, 0.156158, 0.15656, 0.157372, 0.158121, 0.15876, 0.15928, 0.160321, 0.160722, 0.161188, 0.161882, 0.163616, 0.164483, 0.165177, 0.166667, 0.167085, 0.168125, 0.168645, 0.169095, 0.169686, 0.170656, 0.171074, 0.172288, 0.17239, 0.172563, 0.172634, 0.173604, 0.174542, 0.174818, 0.175165, 0.175583, 0.176379, 0.177144, 0.177766, 0.178287, 0.179327, 0.179745, 0.180195, 0.180888, 0.180993, 0.182623, 0.183421, 0.18349, 0.184184, 0.184982, 0.186091, 0.18689, 0.187132, 0.187144, 0.187652, 0.187931, 0.188693, 0.189492, 0.189572, 0.19008, 0.191133, 0.191294, 0.191641, 0.192093, 0.192867, 0.193041, 0.193549, 0.194081, 0.19459, 0.195295, 0.195642, 0.196151, 0.196856, 0.198244, 0.198752, 0.198764, 0.199805, 0.2, 0.200672, 0.201366, 0.202428, 0.2031, 0.203967, 0.203989, 0.204661, 0.205897, 0.206569, 0.206937, 0.207609, 0.20813, 0.208498, 0.20917, 0.210558, 0.2111, 0.211772, 0.212119, 0.214026, 0.215067, 0.216628, 0.219229, 0.220477, 0.22176, 0.222905, 0.224188, 0.224466, 0.225749, 0.226374, 0.227415, 0.227484, 0.227657, 0.228698, 0.228976, 0.229912, 0.230259, 0.231473, 0.231577, 0.23286, 0.233333, 0.23338, 0.234421, 0.235288, 0.235761, 0.235982, 0.237322, 0.237716, 0.238583, 0.239057, 0.23923, 0.239277, 0.240271, 0.241185, 0.241485, 0.241832, 0.242226, 0.242746, 0.243046, 0.243786, 0.244433, 0.244953, 0.245174, 0.245994, 0.246388, 0.246735, 0.246861, 0.247555, 0.248643, 0.249289, 0.249683, 0.250156, 0.25085, 0.251244, 0.252758, 0.253799, 0.253846, 0.254319, 0.255094, 0.25536, 0.256747, 0.257522, 0.257961, 0.258308, 0.259083, 0.260216, 0.26099, 0.261256, 0.261785, 0.262031, 0.262817, 0.263592, 0.264213, 0.265419, 0.265774, 0.266193, 0.266667, 0.267509, 0.267682, 0.268723, 0.269095, 0.269937, 0.270284, 0.270656, 0.271498, 0.272563, 0.272885, 0.273405, 0.273604, 0.274446, 0.275165, 0.275313, 0.276007, 0.277741, 0.277766, 0.278012, 0.278608, 0.279302, 0.28044, 0.28121, 0.282001, 0.282251, 0.282771, 0.283735, 0.283812, 0.283908, 0.284949, 0.285199, 0.286163, 0.286413, 0.28651, 0.28676, 0.287724, 0.288668, 0.289111, 0.289632, 0.289708, 0.290672, 0.291269, 0.29154, 0.292233, 0.293871, 0.293968, 0.294835, 0.295119, 0.295529, 0.297436, 0.297483, 0.297547, 0.298477, 0.298997, 0.299108, 0.299647, 0.299911, 0.300038, 0.301015, 0.301425, 0.301472, 0.302056, 0.302075, 0.302639, 0.302986, 0.303207, 0.30338, 0.303617, 0.303636, 0.304421, 0.304894, 0.30537, 0.305544, 0.305635, 0.305935, 0.305982, 0.306218, 0.306584, 0.307196, 0.307496, 0.307798, 0.308145, 0.308583, 0.309103, 0.309359, 0.310097, 0.310144, 0.310747, 0.311011, 0.311267, 0.311345, 0.311705, 0.312308, 0.313175, 0.313439, 0.313773, 0.313868, 0.314306, 0.315, 0.315334, 0.315603, 0.31647, 0.316908, 0.317164, 0.317242, 0.317949, 0.318282, 0.318469, 0.319071, 0.31951, 0.319843, 0.320112, 0.320632, 0.320897, 0.321673, 0.322111, 0.322445, 0.322458, 0.32306, 0.324275, 0.324366, 0.324621, 0.325406, 0.326529, 0.326967, 0.32757, 0.329131, 0.329569, 0.330817, 0.331732, 0.33298, 0.333245, 0.333722, 0.334806, 0.335408, 0.33615, 0.336713, 0.336969, 0.337711, 0.337754, 0.338877, 0.339315, 0.339446, 0.339619, 0.339918, 0.34066, 0.341478, 0.341874, 0.341916, 0.34222, 0.343435, 0.34408, 0.344822, 0.345342, 0.346383, 0.34725, 0.347944, 0.349678, 0.350545, 0.351239, 0.353147, 0.354187, 0.354708, 0.355748, 0.357136, 0.35835, 0.358697, 0.360605, 0.361645, 0.363206, 0.365808, 0.367056, 0.369484, 0.371045, 0.372952, 0.373993, 0.374288, 0.375554, 0.376716, 0.378155, 0.378277, 0.380011, 0.380185, 0.381225, 0.38244, 0.382786, 0.384, 0.385388, 0.385908, 0.386949, 0.387816, 0.38851, 0.390244, 0.391111, 0.391805, 0.393713, 0.394753, 0.395274, 0.396314, 0.397702, 0.398916, 0.399263, 0.40117, 0.402211, 0.403772, 0.406374, 0.407621, 0.41005, 0.41161, 0.413518, 0.413772, 0.414559, 0.41612, 0.4162, 0.417761, 0.418721, 0.419496, 0.419669, 0.42071, 0.421924, 0.422271, 0.423485, 0.424872, 0.425392, 0.426433, 0.4273, 0.427994, 0.429728, 0.430595, 0.431289, 0.433197, 0.434238, 0.434758, 0.435798, 0.437186, 0.4384, 0.438747, 0.440655, 0.441695, 0.443256, 0.445143, 0.445858, 0.447106, 0.447571, 0.449132, 0.449534, 0.450867, 0.45104, 0.451095, 0.452081, 0.453002, 0.453295, 0.453642, 0.454043, 0.454856, 0.455604, 0.456243, 0.456763, 0.457804, 0.458205, 0.458671, 0.459365, 0.461099, 0.461966, 0.46266, 0.46415, 0.464568, 0.465608, 0.466129, 0.466578, 0.467169, 0.468139, 0.468557, 0.469771, 0.469873, 0.470047, 0.470118, 0.471087, 0.472026, 0.472301, 0.472648, 0.473066, 0.473862, 0.474627, 0.47525, 0.47577, 0.476811, 0.477229, 0.477678, 0.478372, 0.478477, 0.480106, 0.480905, 0.480973, 0.481667, 0.482466, 0.483575, 0.484373, 0.484615, 0.484627, 0.485136, 0.485414, 0.486176, 0.486975, 0.487055, 0.487564, 0.488616, 0.488778, 0.489125, 0.489576, 0.490351, 0.490524, 0.491032, 0.491565, 0.492073, 0.492779, 0.493126, 0.493634, 0.49434),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(0, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(5, 4), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(0, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(-4, 0), Vector2(4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(0, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-4, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-4, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(-5, 3), Vector2(0, 0), Vector2(-4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(0, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(-5, 3), Vector2(-4, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(0, 0), Vector2(-4, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-4, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(0, 0), Vector2(4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(-4, 0), Vector2(3, -2), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-5, 3), Vector2(-3, -3), Vector2(-4, 0), Vector2(3, -2), Vector2(5, 4), Vector2(4, 0), Vector2(-5, 3), Vector2(-3, -3), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(-5, 3), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-4, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(0, 0), Vector2(0, 0), Vector2(-5, 3), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(-5, 3), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(-5, 3), Vector2(0, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(0, 0), Vector2(-4, 0), Vector2(3, -2), Vector2(0, 0), Vector2(4, 0), Vector2(0, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(-3, -3), Vector2(-4, 0), Vector2(4, 0), Vector2(3, -2), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(-5, 3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(0, 0), Vector2(-3, -3), Vector2(-4, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(3, -2), Vector2(4, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(4, 0), Vector2(5, 4), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(0, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(0, 0), Vector2(-4, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(4, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(0, 0), Vector2(-3, -3), Vector2(-5, 3), Vector2(-5, 3), Vector2(3, -2), Vector2(0, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(5, 4), Vector2(4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-5, 3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(0, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(-4, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-5, 3), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(0, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(-4, 0), Vector2(4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(-5, 3), Vector2(0, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(-4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-4, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(-5, 3), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(0, 0), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(-4, 0), Vector2(-5, 3), Vector2(4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(4, 0), Vector2(3, -2), Vector2(-3, -3), Vector2(-4, 0), Vector2(-5, 3), Vector2(3, -2), Vector2(4, 0), Vector2(-5, 3), Vector2(5, 4), Vector2(-3, -3), Vector2(3, -2), Vector2(5, 4), Vector2(0, 0), Vector2(-5, 3), Vector2(0, 0), Vector2(-4, 0), Vector2(-4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(4, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(0, 0), Vector2(0, 0), Vector2(3, -2), Vector2(-5, 3), Vector2(-5, 3), Vector2(-4, 0), Vector2(-4, 0), Vector2(4, 0), Vector2(5, 4), Vector2(4, 0), Vector2(5, 4), Vector2(0, 0), Vector2(-3, -3), Vector2(-3, -3), Vector2(3, -2), Vector2(3, -2), Vector2(-4, 0), Vector2(-5, 3), Vector2(-5, 3), Vector2(4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0416334, 0.251188, 0.494049),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7jw5"]
+_data = {
+"RESET": SubResource("Animation_dp2n1"),
+"heDed": SubResource("Animation_fsb56"),
+"small bob": SubResource("Animation_ygevn")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_05edn"]
+particle_flag_disable_z = true
+angle_min = -15.0
+angle_max = 15.0
+spread = 87.64
+initial_velocity_min = -75.35
+initial_velocity_max = 27.1
+gravity = Vector3(0, -100, 0)
+scale_min = 0.25
+scale_max = 0.5
+color = Color(0, 1, 0.584314, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cs4v7"]
+radius = 15.0
+
+[node name="EnemyBoy" type="Area2D" groups=["enemyKill"]]
+script = ExtResource("1_exs4j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h7jw5")
+}
+autoplay = "small bob"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+position = Vector2(2, 7)
+rotation = -1.57552
+emitting = false
+amount = 18
+process_material = SubResource("ParticleProcessMaterial_05edn")
+texture = ExtResource("2_e6ick")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_ppvhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cs4v7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

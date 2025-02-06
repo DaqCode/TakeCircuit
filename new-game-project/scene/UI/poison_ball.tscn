@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://gwr8ssds0par"]
+[gd_scene load_steps=13 format=3 uid="uid://gwr8ssds0par"]
 
-[ext_resource type="Script" path="res://poison_ball.gd" id="1_oeaon"]
+[ext_resource type="Script" path="res://script/character/poison_ball.gd" id="1_oeaon"]
 [ext_resource type="Texture2D" uid="uid://5smbjv8uljp" path="res://resource/art/characters/mortis/poisonBall/MortFire0000.png" id="2_h0sox"]
 [ext_resource type="Texture2D" uid="uid://b2h3ea6t7akun" path="res://resource/art/characters/mortis/poisonBall/MortFire0001.png" id="3_xlpx1"]
 [ext_resource type="Texture2D" uid="uid://cd8uuwrf71ax8" path="res://resource/art/characters/mortis/poisonBall/MortFire0002.png" id="4_wix8e"]
@@ -34,6 +34,8 @@ animations = [{
 "speed": 18.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvt76"]
+
 [sub_resource type="Gradient" id="Gradient_5a8sf"]
 colors = PackedColorArray(0.239216, 0.431373, 0.439216, 1, 0.811765, 1, 0.439216, 1)
 
@@ -55,13 +57,17 @@ color_ramp = SubResource("GradientTexture1D_h5px0")
 
 [node name="PoisonBall" type="Area2D"]
 script = ExtResource("1_oeaon")
+speed = null
+damage = null
+lifetime = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e0qmh")
 animation = &"go"
 frame_progress = 0.674408
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PoisonBall" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fvt76")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -72,4 +78,5 @@ process_material = SubResource("ParticleProcessMaterial_iu1u5")
 lifetime = 2.0
 explosiveness = 1.0
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

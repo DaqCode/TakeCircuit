@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://883xftl6x515"]
+
+[ext_resource type="Script" path="res://scene/theseHurtYK/spikes.gd" id="1_0xgdq"]
+[ext_resource type="Texture2D" uid="uid://cddjnv08p5ht8" path="res://resource/art/object/spike.png" id="1_qwshd"]
+
+[node name="spikes" type="Area2D"]
+script = ExtResource("1_0xgdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11.2, 12)
+scale = Vector2(1.5, 1.538)
+texture = ExtResource("1_qwshd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(12, 13)
+polygon = PackedVector2Array(-2, -10, 2, -2, 2, 23, -5, 23, -5, -2)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
