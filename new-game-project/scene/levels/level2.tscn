@@ -1922,6 +1922,7 @@ size = Vector2(1151, 95)
 [sub_resource type="Animation" id="Animation_yg2et"]
 resource_name = "new_animation"
 length = 14.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
