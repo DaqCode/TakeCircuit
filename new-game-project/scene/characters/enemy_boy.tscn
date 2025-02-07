@@ -133,6 +133,7 @@ autoplay = "small bob"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_psoy8")
+bus = &"SFX"
 
 [node name="Node2D" type="Node2D" parent="."]
 

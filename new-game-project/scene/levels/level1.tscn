@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cilungqen1wwe"]
+[gd_scene load_steps=22 format=3 uid="uid://cilungqen1wwe"]
 
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_tcxts"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_4genq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://mwbd4ui5a60o" path="res://scene/UI/levelStuff/death_screen.tscn" id="10_slpfx"]
 [ext_resource type="PackedScene" uid="uid://d1yhx8ro48hjn" path="res://scene/theseHurtYK/win_screen.tscn" id="11_awgos"]
 [ext_resource type="PackedScene" uid="uid://b4gdk04y8b0nx" path="res://scene/theseHurtYK/ending_goal.tscn" id="12_f44oh"]
+[ext_resource type="PackedScene" uid="uid://56c7vndacn3e" path="res://scene/UI/settings.tscn" id="13_wncbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgt0j"]
 texture = ExtResource("2_r7my8")
@@ -2062,5 +2063,8 @@ grow_vertical = 1
 
 [node name="EndingGoal" parent="." instance=ExtResource("12_f44oh")]
 position = Vector2(1126, 38)
+
+[node name="Settings" parent="." instance=ExtResource("13_wncbx")]
+z_index = 75
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

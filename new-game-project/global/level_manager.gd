@@ -5,7 +5,8 @@ var levels = [
     preload("res://scene/levels/level1.tscn"),
     preload("res://scene/levels/level2.tscn"),
     preload("res://scene/levels/level3.tscn"),
-	preload("res://scene/levels/level4.tscn")
+	preload("res://scene/levels/level4.tscn"),
+    preload("res://scene/levels/level5.tscn")
 ]
 
 var current_level_index: int = 0

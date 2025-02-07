@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ct1bwlnmymwl4"]
+[gd_scene load_steps=28 format=3 uid="uid://ct1bwlnmymwl4"]
 
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="1_cs1w1"]
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_f0tmf"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://mwbd4ui5a60o" path="res://scene/UI/levelStuff/death_screen.tscn" id="11_30b4a"]
 [ext_resource type="PackedScene" uid="uid://d1yhx8ro48hjn" path="res://scene/theseHurtYK/win_screen.tscn" id="12_dc14d"]
 [ext_resource type="Theme" uid="uid://21y7kl26e5v0" path="res://resource/themes/text.tres" id="13_26bfn"]
+[ext_resource type="PackedScene" uid="uid://56c7vndacn3e" path="res://scene/UI/settings.tscn" id="17_2l0o4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rq4r"]
 texture = ExtResource("2_pi2ko")
@@ -4057,6 +4058,10 @@ position = Vector2(822, 290)
 position = Vector2(647, 294)
 scale = Vector2(1.9, 1.9)
 
+[node name="EnemyBoy8" parent="Node" instance=ExtResource("9_e70yf")]
+position = Vector2(460, 481)
+scale = Vector2(1.9, 1.9)
+
 [node name="EnemyBoy7" parent="Node" instance=ExtResource("9_e70yf")]
 position = Vector2(73.0001, 576)
 scale = Vector2(1.9, 1.9)
@@ -4098,6 +4103,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Label2" type="Label" parent="All the text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.875
+anchor_top = -12.175
+anchor_right = 9.625
+anchor_bottom = -10.375
+offset_left = 465.0
+offset_top = 460.0
+offset_right = 762.0
+offset_bottom = 483.0
+text = "You can bounce on enemies, but they'll hurt."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="ProgressBar" parent="." instance=ExtResource("10_wfau5")]
 anchors_preset = 4
 anchor_top = 0.5
@@ -4133,5 +4154,10 @@ offset_bottom = 325.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Settings" parent="." instance=ExtResource("17_2l0o4")]
+z_index = 30
+offset_left = 0.0
+offset_right = 0.0
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

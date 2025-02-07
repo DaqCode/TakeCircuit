@@ -5,6 +5,7 @@ signal poison_changed(current: float, max: float)
 signal player_died
 signal show_death_screen
 signal show_win_screen
+signal show_pause_screen
 
 # The maximum poison (like health); starts full.
 var poison_max: float

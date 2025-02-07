@@ -1,9 +1,132 @@
-[gd_scene format=3 uid="uid://56c7vndacn3e"]
+[gd_scene load_steps=4 format=3 uid="uid://56c7vndacn3e"]
+
+[ext_resource type="Script" path="res://scene/UI/settings.gd" id="1_jacch"]
+[ext_resource type="Theme" uid="uid://bo7h3nxibla1a" path="res://resource/themes/someSlidingBar.tres" id="2_7aiii"]
+[ext_resource type="Theme" uid="uid://dmgwgxwj8hfe1" path="res://resource/themes/mainMenuAreas.tres" id="3_4d8gw"]
 
 [node name="Settings" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jacch")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 48.0
+offset_right = 1126.0
+offset_bottom = 611.0
+theme = ExtResource("3_4d8gw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 704.0
+offset_top = 115.0
+offset_right = 1065.0
+offset_bottom = 406.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4d8gw")
+theme_override_colors/font_color = Color(0.352941, 0.14902, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+text = "Master Volume"
+
+[node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7aiii")
+min_value = -50.0
+max_value = 0.0
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4d8gw")
+theme_override_colors/font_color = Color(0.352941, 0.14902, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+text = "SFX Volume"
+
+[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7aiii")
+min_value = -50.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4d8gw")
+theme_override_colors/font_color = Color(0.352941, 0.14902, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+text = "Music Volume"
+
+[node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_7aiii")
+min_value = -50.0
+max_value = 0.0
+
+[node name="back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 710.0
+offset_top = 446.0
+offset_right = 1066.0
+offset_bottom = 517.0
+theme = ExtResource("3_4d8gw")
+text = "Go Back!"
+
+[node name="ReturnMenu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 149.0
+offset_right = 440.0
+offset_bottom = 220.0
+theme = ExtResource("3_4d8gw")
+text = "Back to Menu?"
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 234.0
+offset_right = 440.0
+offset_bottom = 305.0
+theme = ExtResource("3_4d8gw")
+text = "Retry?"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 70.0
+offset_right = 364.0
+offset_bottom = 130.0
+theme = ExtResource("3_4d8gw")
+theme_override_colors/font_color = Color(0.352941, 0.14902, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Master" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

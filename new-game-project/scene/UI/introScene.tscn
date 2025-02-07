@@ -511,7 +511,8 @@ autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_32n6d")
-volume_db = 12.0
+volume_db = 8.0
+bus = &"SFX"
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -532,6 +533,7 @@ text = "Skip..?"
 stream = ExtResource("16_idi0y")
 volume_db = -15.0
 pitch_scale = 0.9
+bus = &"Music"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_player_animation_finished"]

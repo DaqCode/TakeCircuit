@@ -410,11 +410,13 @@ lifetime = 0.9
 explosiveness = 1.0
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("49_vdk1n")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="animation_finished" from="MortisAnimations" to="." method="_on_mortis_animation_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

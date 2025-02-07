@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://btqwdgeobep2u"]
+[gd_scene load_steps=28 format=3 uid="uid://btqwdgeobep2u"]
 
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_la6e8"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_igso7"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://883xftl6x515" path="res://scene/theseHurtYK/spikes.tscn" id="13_d2m5c"]
 [ext_resource type="Theme" uid="uid://21y7kl26e5v0" path="res://resource/themes/text.tres" id="14_igvdi"]
 [ext_resource type="PackedScene" uid="uid://bw74ckavir4kd" path="res://scene/characters/enemy_boy.tscn" id="14_wvst0"]
+[ext_resource type="PackedScene" uid="uid://56c7vndacn3e" path="res://scene/UI/settings.tscn" id="16_ep400"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fqrj"]
 texture = ExtResource("3_o4qbr")
@@ -2328,5 +2329,8 @@ offset_bottom = 325.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Settings" parent="." instance=ExtResource("16_ep400")]
+z_index = 75
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

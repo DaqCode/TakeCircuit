@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bqs5ayaeg8amf"]
+[gd_scene load_steps=23 format=3 uid="uid://bqs5ayaeg8amf"]
 
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_7vo1v"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_dxnhb"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bgbqse4drf67p" path="res://scene/UI/progress_bar.tscn" id="11_rjjx6"]
 [ext_resource type="PackedScene" uid="uid://mwbd4ui5a60o" path="res://scene/UI/levelStuff/death_screen.tscn" id="12_t2n0s"]
 [ext_resource type="PackedScene" uid="uid://d1yhx8ro48hjn" path="res://scene/theseHurtYK/win_screen.tscn" id="13_cfy46"]
+[ext_resource type="PackedScene" uid="uid://56c7vndacn3e" path="res://scene/UI/settings.tscn" id="14_5ldyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4u1w"]
 texture = ExtResource("3_lc3b4")
@@ -2096,7 +2097,19 @@ position = Vector2(1023, 411)
 [node name="Node" type="Node" parent="."]
 
 [node name="EnemyBoy3" parent="Node" instance=ExtResource("10_6epcs")]
-position = Vector2(417, 46)
+position = Vector2(354, 28)
+scale = Vector2(-1.9, 1.9)
+
+[node name="EnemyBoy5" parent="Node" instance=ExtResource("10_6epcs")]
+position = Vector2(297, 156)
+scale = Vector2(-1.9, 1.9)
+
+[node name="EnemyBoy6" parent="Node" instance=ExtResource("10_6epcs")]
+position = Vector2(210, 155)
+scale = Vector2(-1.9, 1.9)
+
+[node name="EnemyBoy7" parent="Node" instance=ExtResource("10_6epcs")]
+position = Vector2(143, 121)
 scale = Vector2(-1.9, 1.9)
 
 [node name="EnemyBoy4" parent="Node" instance=ExtResource("10_6epcs")]
@@ -2136,5 +2149,8 @@ offset_bottom = 325.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Settings" parent="." instance=ExtResource("14_5ldyt")]
+z_index = 30
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

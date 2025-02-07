@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rf4dysom0iub"]
+[gd_scene load_steps=27 format=3 uid="uid://rf4dysom0iub"]
 
 [ext_resource type="Script" path="res://scene/levels/level1.gd" id="1_qvao0"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_kuay5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d1yhx8ro48hjn" path="res://scene/theseHurtYK/win_screen.tscn" id="10_iynsl"]
 [ext_resource type="PackedScene" uid="uid://883xftl6x515" path="res://scene/theseHurtYK/spikes.tscn" id="11_hnraq"]
 [ext_resource type="Theme" uid="uid://21y7kl26e5v0" path="res://resource/themes/text.tres" id="12_in5gh"]
+[ext_resource type="PackedScene" uid="uid://56c7vndacn3e" path="res://scene/UI/settings.tscn" id="15_i5ovb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fy3s"]
 texture = ExtResource("3_vdppx")
@@ -2124,5 +2125,8 @@ libraries = {
 "": SubResource("AnimationLibrary_4en8g")
 }
 autoplay = "new_animation"
+
+[node name="Settings" parent="." instance=ExtResource("15_i5ovb")]
+z_index = 75
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]
