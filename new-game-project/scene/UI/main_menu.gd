@@ -25,3 +25,11 @@ func _on_levels_pressed() -> void:
 func _on_play_pressed() -> void:
 	print ("YES YOURE CLICKING FOOL")
 	get_tree().change_scene_to_file("res://scene/levels/level1.tscn")
+
+
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/settings.tscn")
+
+func _on_settings_mouse_entered() -> void:
+	$SFX.play()

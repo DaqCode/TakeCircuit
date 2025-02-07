@@ -506,11 +506,12 @@ offset_right = 1920.0
 offset_bottom = 1088.0
 scale = Vector2(0.6, 0.6)
 stream = ExtResource("1_up8pk")
+volume_db = 5.0
 autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_32n6d")
-volume_db = -2.0
+volume_db = 12.0
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

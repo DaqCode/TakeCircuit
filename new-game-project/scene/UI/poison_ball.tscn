@@ -57,9 +57,6 @@ color_ramp = SubResource("GradientTexture1D_h5px0")
 
 [node name="PoisonBall" type="Area2D"]
 script = ExtResource("1_oeaon")
-speed = null
-damage = null
-lifetime = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e0qmh")

@@ -1,24 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bw74ckavir4kd"]
+[gd_scene load_steps=11 format=3 uid="uid://bw74ckavir4kd"]
 
 [ext_resource type="Script" path="res://scene/characters/enemy_boy.gd" id="1_exs4j"]
 [ext_resource type="Texture2D" uid="uid://cc73b2ij6lo7w" path="res://resource/art/object/Nyarlm.png" id="1_ppvhf"]
 [ext_resource type="Texture2D" uid="uid://c42cw2eudmw1p" path="res://resource/art/object/firePart.png" id="2_e6ick"]
-
-[sub_resource type="Animation" id="Animation_ygevn"]
-resource_name = "small bob"
-length = 14.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.46667, 4.16667, 7, 10.0333, 10.6, 14),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, -20), Vector2(0, 0), Vector2(0, 19), Vector2(0, 19), Vector2(0, 0)]
-}
+[ext_resource type="AudioStream" uid="uid://cg45jtef5yf4n" path="res://resource/Sounds/sfx/enemyHurt.wav" id="2_psoy8"]
 
 [sub_resource type="Animation" id="Animation_dp2n1"]
 length = 0.001
@@ -99,6 +84,22 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ygevn"]
+resource_name = "small bob"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.46667, 4.16667, 7, 10.0333, 10.6, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, -20), Vector2(0, 0), Vector2(0, 19), Vector2(0, 19), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h7jw5"]
 _data = {
 "RESET": SubResource("Animation_dp2n1"),
@@ -131,6 +132,7 @@ libraries = {
 autoplay = "small bob"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_psoy8")
 
 [node name="Node2D" type="Node2D" parent="."]
 

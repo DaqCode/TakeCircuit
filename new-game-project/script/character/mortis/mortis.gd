@@ -227,9 +227,16 @@ func _on_dash_timer_timeout() -> void:
 func _on_fire_timer_timeout() -> void:
 	can_shoot = true
 
-func take_damage(amount: float, knockback: Vector2) -> void:
-	Global.apply_poison_damage(amount)
-	velocity += knockback
+func take_damage(damage: int, knockback_force: Vector2) -> void:
+	Global.apply_poison_damage(damage)
+	
+	self.velocity += knockback_force 
+
+	# Play hurt animations
+	$MortisAnimations.stop()
+	$SFX.stream = load("res://resource/Sounds/sfx/playerHurt.wav")
+	$SFX.play()
+	$MortisAnimations.play("Damage")
 
 func _on_mortis_animation_finished() -> void:
 	if mortis_animation.animation == "Dash":
@@ -243,6 +250,8 @@ func _on_dash_animation_finished() -> void:
 		is_dashing_animating = false
 		mortis_animation.play("Idle") 
 	elif mortis_animation.animation == "PoisonBall":
+		mortis_animation.play("Idle")
+	elif mortis_animation.animation == "Damage":
 		mortis_animation.play("Idle")
 
 
@@ -261,4 +270,4 @@ func when_die() -> void:
 func ShowSmallDanceIguess() -> void:
 	is_dead = true  # Set the flag so that movement code stops
 	mortis_animation.play("Win")
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.7).timeout

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://duta6nhxw46f5"]
+[gd_scene load_steps=8 format=3 uid="uid://duta6nhxw46f5"]
 
 [ext_resource type="Texture2D" uid="uid://bpa4vpw0lft8" path="res://resource/art/object/poisonVial.png" id="1_gjuhu"]
 [ext_resource type="Script" path="res://scene/items/PoisonVial/poison_vial.gd" id="1_p63y7"]
+[ext_resource type="AudioStream" uid="uid://bifaq1cqkknx2" path="res://resource/Sounds/sfx/collectedVial.wav" id="3_40uwg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mbgi"]
 radius = 6.4
@@ -60,5 +61,9 @@ libraries = {
 "": SubResource("AnimationLibrary_4krxs")
 }
 autoplay = "heSpin"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_40uwg")
+pitch_scale = 0.83
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

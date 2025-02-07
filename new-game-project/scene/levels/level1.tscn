@@ -1970,7 +1970,7 @@ position = Vector2(671, 336)
 position = Vector2(727, 133)
 
 [node name="Mortis" parent="." instance=ExtResource("3_ksrci")]
-position = Vector2(928, 85)
+position = Vector2(68, 486)
 
 [node name="All the text" type="Control" parent="."]
 layout_mode = 3
