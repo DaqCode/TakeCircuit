@@ -2305,6 +2305,7 @@ grow_horizontal = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="DeathScreen" parent="." instance=ExtResource("11_3ell4")]
+z_index = 50
 anchors_preset = 15
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2317,6 +2318,7 @@ offset_bottom = 325.0
 metadata/_edit_use_anchors_ = true
 
 [node name="WinScreen" parent="." instance=ExtResource("12_xv7od")]
+z_index = 90
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2331,6 +2333,6 @@ grow_vertical = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" parent="." instance=ExtResource("16_ep400")]
-z_index = 75
+z_index = 100
 
 [connection signal="body_entered" from="FallBoundary" to="." method="_on_fall_boundary_body_entered"]

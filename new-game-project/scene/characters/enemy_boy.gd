@@ -3,11 +3,11 @@ extends Area2D
 func _on_body_entered(body:Node2D) -> void:
 	if body.name == "Mortis":
 		var mortis = get_tree().current_scene.get_node("Mortis")
-		mortis.take_damage(15, Vector2(750, -700))  # Knockback right and slightly up
+		mortis.take_damage(15, Vector2(750, -1250))  # Knockback right and slightly up
 
 		$AudioStreamPlayer.stream = load("res://resource/Sounds/sfx/enemyHurt.wav")
 		$AudioStreamPlayer.play()
-		Global.apply_poison_damage(30)
+		Global.apply_poison_damage(25)
 		print("YOU HURT ME >:(")
 
 

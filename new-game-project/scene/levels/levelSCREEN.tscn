@@ -1,0 +1,139 @@
+[gd_scene load_steps=5 format=3 uid="uid://ira7kamavvnn"]
+
+[ext_resource type="Theme" uid="uid://cv04lef3oqxtw" path="res://resource/themes/UIThemes/UiThemes.tres" id="1_8w3ek"]
+[ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="2_35186"]
+[ext_resource type="Script" path="res://scene/levels/level_screen.gd" id="2_exx6o"]
+[ext_resource type="Theme" uid="uid://dgu18y3b4q4js" path="res://scene/levels/levelSCREEN.tres" id="4_qscfr"]
+
+[node name="levelScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8w3ek")
+script = ExtResource("2_exx6o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_35186")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -317.0
+offset_right = 217.5
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.560784, 0.870588, 0.364706, 1)
+theme_override_colors/font_shadow_color = Color(0.811765, 1, 0.439216, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0.921569, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 72
+text = "Select A Level!"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 165.0
+offset_right = 1060.0
+offset_bottom = 548.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+
+[node name="GridContainer2" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Level1" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 1"
+
+[node name="Level2" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 3"
+
+[node name="Level4" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 4"
+
+[node name="GridContainer3" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 5
+
+[node name="Level5" type="Button" parent="GridContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 5"
+
+[node name="Level6" type="Button" parent="GridContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 6"
+
+[node name="Level7" type="Button" parent="GridContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_qscfr")
+text = "Level 7"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 203.0
+offset_bottom = 78.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Back"
+
+[connection signal="pressed" from="GridContainer/GridContainer2/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer2/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer2/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer2/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer3/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer3/Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer3/Level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cg6r1eabd0pt2"]
+[gd_scene load_steps=78 format=3 uid="uid://cg6r1eabd0pt2"]
 
 [ext_resource type="Script" path="res://script/character/mortis/mortis.gd" id="1_3ldrt"]
 [ext_resource type="Texture2D" uid="uid://b0q3j34tatuhy" path="res://resource/art/characters/mortis/idle/MortisIdle0000.png" id="1_tmc61"]
@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://352kv2fgp2pw" path="res://resource/art/characters/mortis/win/MortWin0000.png" id="47_e1u8c"]
 [ext_resource type="Texture2D" uid="uid://cp1ghyd2leomj" path="res://resource/art/characters/mortis/win/MortWin0001.png" id="48_3gs6x"]
 [ext_resource type="Texture2D" uid="uid://b5ufgqpub8v42" path="res://resource/art/characters/mortis/win/MortWin0002.png" id="49_g1c38"]
-[ext_resource type="AudioStream" uid="uid://c570g2avhckf0" path="res://resource/Sounds/music/relaxing-piano-music-for-friday-261589.mp3" id="49_vdk1n"]
 [ext_resource type="Texture2D" uid="uid://bww77b4t4sfa1" path="res://resource/art/characters/mortis/win/MortWin0003.png" id="50_4m2vd"]
 [ext_resource type="Texture2D" uid="uid://b3jxmimjngtan" path="res://resource/art/characters/mortis/win/MortWin0004.png" id="51_6tah3"]
 [ext_resource type="Texture2D" uid="uid://gkhl7qkcavdt" path="res://resource/art/characters/mortis/win/MortWin0005.png" id="52_odw7d"]
@@ -411,12 +410,6 @@ explosiveness = 1.0
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("49_vdk1n")
-volume_db = -20.0
-autoplay = true
-bus = &"Music"
 
 [connection signal="animation_finished" from="MortisAnimations" to="." method="_on_mortis_animation_finished"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

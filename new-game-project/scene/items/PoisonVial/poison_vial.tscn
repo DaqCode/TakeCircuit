@@ -64,7 +64,6 @@ autoplay = "heSpin"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_40uwg")
-pitch_scale = 0.83
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

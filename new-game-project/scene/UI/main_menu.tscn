@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://coeo1we2ngyl2"]
+[gd_scene load_steps=33 format=3 uid="uid://coeo1we2ngyl2"]
 
 [ext_resource type="Script" path="res://scene/UI/main_menu.gd" id="1_iv6yc"]
 [ext_resource type="Texture2D" uid="uid://dwrt2uit6en3f" path="res://resource/art/background/Background.png" id="1_umx67"]
@@ -17,7 +17,6 @@
 [ext_resource type="Theme" uid="uid://cv04lef3oqxtw" path="res://resource/themes/UIThemes/UiThemes.tres" id="14_aoy1e"]
 [ext_resource type="FontFile" uid="uid://b43kwvpw4gy2s" path="res://resource/art/fonts/Montserrat-Bold.ttf" id="15_ksjhr"]
 [ext_resource type="Theme" uid="uid://dmgwgxwj8hfe1" path="res://resource/themes/mainMenuAreas.tres" id="15_q2o26"]
-[ext_resource type="AudioStream" uid="uid://dlcw233jxqqys" path="res://resource/Sounds/music/just-relax-11157.mp3" id="18_owqei"]
 [ext_resource type="AudioStream" uid="uid://dte5xgx5oiw31" path="res://resource/Sounds/sfx/someSound.wav" id="19_mm0v4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgccs"]
@@ -805,12 +804,6 @@ text = "Levels!"
 libraries = {
 "": SubResource("AnimationLibrary_5fk17")
 }
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_owqei")
-volume_db = -17.0
-autoplay = true
-bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_mm0v4")

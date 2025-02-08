@@ -1,12 +1,15 @@
 extends Control
 
 func _ready() -> void:
-	await get_tree().create_timer(1.0).timeout
 	$PoisonBar.value = Global.poison_current
 	$PoisonBar.max_value = Global.poison_max
 	Global.connect("poison_changed", Callable( self, "_on_poison_changed"))
 	Global.connect("player_died", Callable(self, "_on_player_died"))
 	Global.connect("show_death_screen", Callable(self, "_on_show_death_screen"))
+
+func _process(_delta: float) -> void:
+	$PoisonBar.value = Global.poison_current
+	$PoisonBar.max_value = Global.poison_max
 
 func _on_poison_changed(current: float, max: float) -> void:
 	var poison_bar = $PoisonBar

@@ -2137,6 +2137,7 @@ offset_bottom = 325.0
 metadata/_edit_use_anchors_ = true
 
 [node name="WinScreen" parent="." instance=ExtResource("13_cfy46")]
+z_index = 40
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0

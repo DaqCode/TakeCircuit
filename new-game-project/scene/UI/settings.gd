@@ -5,12 +5,18 @@ func _ready() -> void:
 	Global.connect("show_pause_screen", Callable(self, "go_show_the_screen"))
 
 func _on_volume_value_changed(value:float) -> void:
+	if(value == -25):
+		AudioServer.set_bus_volume_db(0, -200)
 	AudioServer.set_bus_volume_db(0, value)
 
 func _on_music_value_changed(value:float) -> void:
+	if(value == -25):
+		AudioServer.set_bus_volume_db(0, -200)
 	AudioServer.set_bus_volume_db(1, value)
 
 func _on_sfx_value_changed(value:float) -> void:
+	if(value == -25):
+		AudioServer.set_bus_volume_db(0, -200)
 	AudioServer.set_bus_volume_db(2, value)
 
 
