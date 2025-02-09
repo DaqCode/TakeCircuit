@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _ready() -> void:
 	Global.poison_current = 50
 	Global.poison_max = 100

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce3yls26iwcxm"]
+
+[ext_resource type="Texture2D" uid="uid://dnp4jhxkwoixv" path="res://resource/art/tileset/Tiles.png" id="1_lkqx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prixp"]
+size = Vector2(76, 31)
+
+[sub_resource type="Animation" id="Animation_1xyy4"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 2.36667, 3.63333, 4.46667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(437, 76), Vector2(726, -1), Vector2(726, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v7xnu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2ebm"]
+_data = {
+"RESET": SubResource("Animation_v7xnu"),
+"move": SubResource("Animation_1xyy4")
+}
+
+[node name="PlatformOther" type="Node2D"]
+
+[node name="Platform" type="AnimatableBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+texture = ExtResource("1_lkqx8")
+region_enabled = true
+region_rect = Rect2(0, 6.61851, 79.3906, 78.2313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_prixp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+"": SubResource("AnimationLibrary_j2ebm")
+}
+autoplay = "move"

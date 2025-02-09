@@ -1352,6 +1352,7 @@ _data = {
 }
 
 [node name="WinScreen" type="Control"]
+z_index = 75
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

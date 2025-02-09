@@ -2027,7 +2027,7 @@ offset_right = 1116.0
 offset_bottom = 232.0
 theme = ExtResource("9_apil7")
 text = "A teleport will stagger you. Use it wisely.
-Left click or use \"L\""
+M1 or use \"L\""
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
